@@ -1,0 +1,39 @@
+declare namespace NodeJS {
+  interface ProcessEnv {
+    NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: string;
+    NEXT_PUBLIC_CLOUDINARY_API_KEY: string;
+    SERVER_CLOUDINARY_API_SECRET: string;
+
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: string;
+    SERVER_CLERK_SECRET_KEY: string;
+
+    NEXT_PUBLIC_HUBSPOT_PORTAL_ID: string;
+    NEXT_PUBLIC_HUBSPOT_FORM_GUID: string;
+    NEXT_PUBLIC_HUBSPOT_FORM_DIRECT: string;
+    SERVER_HUBSPOT_API_KEY: string;
+
+    NEXT_PUBLIC_STRIPE_PUBLIC_KEY: string;
+    SERVER_STRIPE_SECRET_KEY: string;
+    
+    NEXT_PUBLIC_RECAPTCHA_SITE_KEY: string;
+    SERVER_RECAPTCHA_SECRET_KEY: string;
+
+    SERVER_RESEND_API_KEY: string; 
+    SERVER_RESEND_FROM_EMAIL: string;
+    SERVER_RESEND_FROM_NAME: string;
+    SERVER_RESEND_AUDIENCE_ID: string;
+
+    SERVER_SENDGRID_API_KEY: string;
+    SERVER_SENDGRID_FROM_EMAIL: string;
+    SERVER_SENDGRID_TEMPLATE_ID: string;
+
+    SERVER_MYSQL_HOST: string;
+    SERVER_MYSQL_USER: string;
+    SERVER_MYSQL_PASSWORD: string;
+    SERVER_MYSQL_DATABASE: string;
+    SERVER_MYSQL_PORT: string;
+
+    NODE_ENV: "development" | "production" | "test";
+    SERVER_PORT: string;
+  }
+}
