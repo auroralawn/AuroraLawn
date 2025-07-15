@@ -81,7 +81,7 @@ body {
 
   /* Paragraph Bolded Link Text */
   .paragraph-link {
-    @apply text-accent text-lg font-semibold font-inter text-left underline;
+    @apply hover:text-accent transition text-black/70;
   }
 
   /* Subtitle Text */

@@ -51,16 +51,16 @@
   }
 
   .testimonial-card-odd {
-    @apply flex justify-center items-center p-6 rounded-lg bg-primary text-accent;
+    @apply flex justify-center items-center p-6 rounded-lg bg-primary text-white;
   }
 
   /* Button component */
   .btn-primary {
-    @apply px-5 md:px-6 py-2 md:py-3 rounded-md bg-primary text-accent focus:outline-none hover:scale-105 transition;
+    @apply px-5 md:px-6 py-2 md:py-2 rounded-xl bg-primary text-white focus:outline-none hover:scale-105 transition;
   }
 
   .btn-secondary {
-    @apply px-5 md:px-6 py-2 md:py-3 rounded-md bg-secondary text-accent focus:outline-none hover:scale-105 transition;
+    @apply px-5 md:px-6 py-2 md:py-2 rounded-xl bg-secondary text-white focus:outline-none hover:scale-105 transition;
   }
 
   .counter {

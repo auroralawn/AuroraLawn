@@ -1,11 +1,21 @@
+import CallToAction from '@/components/Shared/CallToAction';
+import Testimonials from '@/components/Shared/Testimonials';
+import About from '@/components/home/About';
+import Hero from '@/components/home/Hero';
+import Packages from '@/components/home/Packages';
+import Process from '@/components/home/Process';
+import Services from '@/components/home/Services';
+
 export default function Home() {
   return (
-    <div className='grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen'>
-      <main className=''>
-        <div className='card'>
-          <h1 className='text-primary'>HELLOW</h1>
-        </div>
-      </main>
+    <div className='flex flex-col'>
+      <Hero />
+      <About />
+      <Process />
+      <Services />
+      <Packages />
+      <Testimonials />
+      <CallToAction />
     </div>
   );
 }
