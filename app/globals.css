@@ -43,19 +43,19 @@ body {
   /* H3 Section Heading */
   h3,
   .h3-section-heading {
-    @apply mb-10 text-center text-2xl md:text-3xl lg:text-5xl font-semibold font-sourceSerif4 leading-normal;
+    @apply mb-10 text-center text-xl md:text-2xl lg:text-3xl font-semibold font-sourceSerif4 leading-normal;
   }
 
   /* H4 Heading Text */
   h4,
   .h4-heading {
-    @apply mb-4 text-base md:text-lg font-semibold font-inter text-left;
+    @apply mb-4 text-base text-secondary md:text-lg font-semibold font-inter text-left;
   }
 
   /* H5 Sub Heading Light Text */
   h5,
   .h5-subheading {
-    @apply mb-4 text-sm md:text-2xl font-extralight tracking-tighter text-center;
+    @apply mb-4 text-sm md:text-base text-secondary font-extralight text-center;
   }
 
   /* Button Text */

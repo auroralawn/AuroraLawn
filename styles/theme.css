@@ -4,7 +4,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-overlay: rgba(0, 0, 0, 0.6);
+  --color-overlay: rgba(255, 255, 255, 0.2);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
@@ -13,10 +13,13 @@
   --font-sourceSerif4: var(--font-source-serif-4);
 
   /* Color Palette:  eg. --color-primary: oklch(0.52 0.18 264); */
-  --color-primary: #89D9D0;
-  --color-primary-light: #bff5ee;
-  --color-secondary: #CEAFD1;
-  --color-accent: #64E3A1;
+  /* --color-primary: #89D9D0; */
+  --color-primary: #012c32;
+  /* --color-primary-light: #bff5ee; */
+  --color-primary-light: rgb(12, 133, 149);
+  /* --color-secondary: #ceafd1; */
+  --color-secondary: #036270;
+  --color-accent: #64e3a1;
   --color-light-gray: #f4f4f4;
   --color-gray-border: rgba(0, 0, 0, 0.25);
   --color-facebook-blue: #0666fe;

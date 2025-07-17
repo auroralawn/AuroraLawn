@@ -8,8 +8,8 @@ interface NavbarProps {
 
 export default function Navbar({ customClass }: NavbarProps) {
   return (
-    <div className={`${customClass} flex-col bg-white text-[#333333]`}>
-      <nav className='fixed top-3 left-3 right-3 z-50 bg-white shadow-md'>
+    <div className={`${customClass} flex-col text-[#333333] `}>
+      <nav className='fixed top-3 left-3 right-3 z-50 bg-white shadow-md rounded-lg'>
         <div className='flex items-center justify-between px-10 py-2'>
           {/* Logo and Company Name */}
           <Link

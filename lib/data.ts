@@ -28,7 +28,7 @@ export const navLinks = [
   },
   {
     name: 'Services',
-    href: '/landscapingservices',
+    href: '/services',
     icon: FaToolbox,
   },
   {
@@ -130,7 +130,7 @@ export const testimonials = [
     location: 'minnesota',
     rating: 5,
     review:
-      'Very Good work I love it oh yeahhhh. It was very good and my yard is clean and beautiful.',
+      'Very Good work I love it oh yeahhhh. It was very good and my yard is clean and beautiful.Very Good work I love it oh yeahhhh. It was very good and my yard is clean and beautiful.Very Good work I love it oh yeahhhh. It was very good and my yard is clean and beautiful.',
   },
   {
     clientName: 'John Doe',
@@ -148,11 +148,45 @@ export const testimonials = [
   },
 ];
 
+export const servicePlans = [
+  {
+    id: 'basic-plan',
+    name: 'Basic Plan',
+    perks: ['Lawn Mowing'],
+    price: 25,
+  },
+  {
+    id: 'regular-plan',
+    name: 'Regular Plan',
+    perks: ['Lawn Mowing', 'Rubbish Removal'],
+    price: 50,
+  },
+  {
+    id: 'premium-plan',
+    name: 'Premium Plan',
+    perks: [
+      'Lawn Mowing',
+      'Rubbish Removal',
+      'Watering Garden',
+      'Planting',
+      'up to 5000 sq/ft',
+    ],
+    price: 150,
+  },
+  {
+    id: 'advance-plan',
+    name: 'Advance Plan',
+    perks: ['Lawn Mowing', 'Rubbish Removal', 'Watering Garden'],
+    price: 100,
+  },
+];
+
 export const services = [
   {
     id: 'lawn-mowing',
     name: 'Lawn Mowing',
-    mainImageId: 'lawn-mowing-main',
+    // mainImageId: 'lawn-mowing-main',
+    mainImageId: '/Hero.jpg',
     galleryTag: 'lawn-mowing',
     description:
       'Elegant, durable paver driveways and pathways that enhance property access while adding distinctive character to your landscape.',
@@ -161,7 +195,8 @@ export const services = [
   {
     id: 'landscpaing',
     name: 'Landscpaing',
-    mainImageId: 'landscpaing-main',
+    // mainImageId: 'landscpaing-main',
+    mainImageId: '/Hero.jpg',
     galleryTag: 'landscpaing',
     description:
       'Elegant, durable paver driveways and pathways that enhance property access while adding distinctive character to your landscape.',
@@ -170,7 +205,8 @@ export const services = [
   {
     id: 'gardening',
     name: 'Gardening',
-    mainImageId: 'gardening-main',
+    // mainImageId: 'gardening-main',
+    mainImageId: '/Hero.jpg',
     galleryTag: 'gardening',
     description:
       'Elegant, durable paver driveways and pathways that enhance property access while adding distinctive character to your landscape.',
@@ -179,7 +215,8 @@ export const services = [
   {
     id: 'decks',
     name: 'Decks',
-    mainImageId: 'decks-main',
+    // mainImageId: 'decks-main',
+    mainImageId: '/Hero.jpg',
     galleryTag: 'decks',
     description:
       'Elegant, durable paver driveways and pathways that enhance property access while adding distinctive character to your landscape.',
@@ -188,7 +225,8 @@ export const services = [
   {
     id: 'pond-building',
     name: 'Pond Building',
-    mainImageId: 'pond-building-main',
+    // mainImageId: 'pond-building-main',
+    mainImageId: '/Hero.jpg',
     galleryTag: 'pond-building',
     description:
       'Elegant, durable paver driveways and pathways that enhance property access while adding distinctive character to your landscape.',

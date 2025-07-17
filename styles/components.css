@@ -47,7 +47,7 @@
   }
 
   .testimonial-card-even {
-    @apply flex justify-center items-center p-6 rounded-lg bg-primary-light;
+    @apply flex justify-center items-center p-6 rounded-lg bg-primary text-white;
   }
 
   .testimonial-card-odd {
@@ -56,7 +56,7 @@
 
   /* Button component */
   .btn-primary {
-    @apply px-5 md:px-6 py-2 md:py-2 rounded-xl bg-primary text-white focus:outline-none hover:scale-105 transition;
+    @apply px-5 md:px-6 py-2 md:py-2 rounded-xl bg-primary hover:bg-[#7ec9cd] text-white focus:outline-none transition;
   }
 
   .btn-secondary {
@@ -72,6 +72,6 @@
   }
 
   .input-field {
-    @apply w-full p-3 rounded-lg border border-secondary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all;
+    @apply w-full p-3 rounded-lg border border-primary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all;
   }
 }

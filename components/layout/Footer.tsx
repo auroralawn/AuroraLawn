@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
       </div>
       <div className='h-10 bg-primary flex items-center justify-center'>
-        <p className='text-center'>
+        <p className='text-center text-white'>
           &copy; 2025 Aurora Lawn & Landscaping. All Rights Reserved.
         </p>
       </div>
