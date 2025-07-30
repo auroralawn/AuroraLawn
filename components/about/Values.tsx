@@ -9,7 +9,7 @@ export default function Values() {
     <Section customClass='bg-light-gray'>
       <Container>
         <h3 className='text-center'>Quick & Simple Process</h3>
-        <div className='w-full flex justify-between'>
+        <div className='w-full md:flex justify-between'>
           {companyValues.map((value) => (
             <Trait
               key={value.label}

@@ -16,16 +16,16 @@ export default function page() {
       />
       <Section customClass='bg-white flex flex-col justify-center items-center'>
         <Container>
-          <h4 className='text-center'>Meet The Team</h4>
-          <h3 className='text-center'>The Team That Makes it Happen</h3>
+          <h4>Meet The Team</h4>
+          <h3>The Team That Makes it Happen</h3>
           <Image
             src={'/hero.jpeg'}
             alt='about'
-            width={700}
+            width={1100}
             height={300}
             className='rounded-lg'
           />
-          <p className='max-w-3xl text-center my-10'>
+          <p className='max-w-6xl text-center my-10'>
             <span className='font-black text-secondary'>
               Aurora Lawn and Landscape
             </span>

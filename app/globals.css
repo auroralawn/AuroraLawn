@@ -49,7 +49,7 @@ body {
   /* H4 Heading Text */
   h4,
   .h4-heading {
-    @apply mb-4 text-base text-secondary md:text-lg font-semibold font-inter text-left;
+    @apply mb-4 text-center text-base text-secondary md:text-lg font-semibold font-inter md:text-start;
   }
 
   /* H5 Sub Heading Light Text */

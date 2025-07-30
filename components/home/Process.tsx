@@ -9,7 +9,7 @@ export default function Process() {
     <Section customClass='bg-light-gray'>
       <Container>
         <h3 className='text-center'>Quick & Simple Process</h3>
-        <div className='w-full flex justify-between'>
+        <div className='w-full md:flex justify-between'>
           <Trait
             icon={IoDocumentOutline}
             name='Get Your Quote'

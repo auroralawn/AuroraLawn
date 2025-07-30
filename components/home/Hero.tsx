@@ -3,29 +3,46 @@ import ContactForm from '../Shared/ContactForm';
 
 export default function Hero() {
   return (
-    <div className='relative w-full h-screen'>
+    <section className='relative min-h-screen w-full overflow-hidden'>
+      {/* Background Image */}
       <Image
-        src='/hero.jpeg'
-        alt='Hero'
-        priority
+        src='/Hero.jpeg' // <-- Replace with your image
+        alt='Lawn background'
         fill
-        className='object-cover'
+        priority
+        className='object-cover z-0'
       />
 
-      {/* Overlay & Content */}
-      <div className='absolute inset-0 bg-overlay'>
-        <div className='container mx-auto px-4 h-full flex flex-col justify-center items-start text-start'>
-          <h2 className='text-white font-inter'>Proudly Servicing</h2>
-          <h1 className='text-primary'>Minnesota’s Lawns,</h1>
-          <h2 className='text-white mb-5'>Season After Season</h2>
-          <p className='md:text-lg text-white max-w-3xl'>
-            Professional lawn care and landscaping services in Minnesota. From
-            weekly mowing to custom pond installations, we bring your outdoor
-            vision to life.
-          </p>
+      {/* Overlay */}
+      <div className='absolute inset-0 bg-white/20 z-10' />
+
+      {/* Content Wrapper */}
+      <div className='relative z-20 flex items-center justify-center min-h-screen mt-20 '>
+        <div className=' w-full max-w-7xl flex flex-col xl:flex-row items-center justify-between xl:gap-12 rounded-xl'>
+          {/* Left Side: Text */}
+          <div className='px-4 w-full md:w-2/3 space-y-2 text-center sm:text-start'>
+            <h1 className='text-4xl text-white text-center xl:text-start'>
+              Proudly Servicing
+            </h1>
+            <h2 className='text-primary text-center xl:text-start'>
+              Minnesota’s Lawns,
+            </h2>
+            <h3 className='text-4xl text-white text-center xl:text-start'>
+              Season After Season
+            </h3>
+            <p className='text-white text-center xl:text-start'>
+              Professional lawn care and landscaping services in Minnesota. From
+              weekly mowing to custom pond installations, we bring your outdoor
+              vision to life.
+            </p>
+          </div>
+
+          {/* Right Side: Form */}
+          <div className='smd:w-1/2'>
+            <ContactForm />
+          </div>
         </div>
       </div>
-      <ContactForm customClass='absolute left-2/3 top-1/4  container' />
-    </div>
+    </section>
   );
 }

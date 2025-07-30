@@ -81,4 +81,5 @@ export interface ContactFormData {
   zipcode: string;
   services: string[];
   message: string;
+  image?: File | null;
 }

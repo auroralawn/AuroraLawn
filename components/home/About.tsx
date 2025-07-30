@@ -7,10 +7,10 @@ export default function About() {
   return (
     <Section>
       <Container>
-        <div className='flex'>
-          <div className='mx-10'>
-            <h4 className='text-center'>Your Local Landscaping Experts</h4>
-            <h3 className='text-center'>{companyName}</h3>
+        <div className='my-10 xl:my-0 flex flex-col items-center gap-10 xl:gap-0 xl:flex-row'>
+          <div className='xl:mx-10'>
+            <h4 className='text-center '>Your Local Landscaping Experts</h4>
+            <h3>{companyName}</h3>
             <p className='text-center'>
               Welcome to Aurora Lawn & Landscaping! We&apos;re a local Minnesota
               team passionate about creating beautiful outdoor spaces throughout

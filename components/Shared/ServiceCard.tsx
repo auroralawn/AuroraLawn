@@ -1,46 +1,25 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
-// import { processServiceData } from '@/lib/api/cloudinary';
 
 interface ServiceCardProps {
+  href: string;
   showAmount?: number;
   filterOut?: string;
   serviceName: string;
   serviceDescrition: string;
 }
 
-// async function getServicesData() {
-//   return services.map((service) => processServiceData(service));
-// }
-
-export default async function ServiceCard({
+export default function ServiceCard({
+  href,
   serviceName,
   serviceDescrition,
 }: Readonly<ServiceCardProps>) {
-  // const servicesWithImages = await getServicesData();
-
-  // if (filterOut) {
-  //   servicesWithImages = servicesWithImages.filter(
-  //     (service) => service.id !== filterOut
-  //   );
-  // }
-  // const displayedServices = showAmount
-  //   ? servicesWithImages.slice(0, showAmount)
-  //   : servicesWithImages;
-
   return (
-    // <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-    //   {displayedServices.map((service) => (
-    //     <Link
-    //       href={`/services/${service.id}`}
-    //       key={service.id}
-    //       className='group'
-    //     >
-
-    //     </Link>
-    //   ))}
-    // </div>
-    <div className='bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow'>
+    <Link
+      href={`/services/${href}`}
+      className='bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow w-full h-full'
+    >
       <div className='relative h-64'>
         <Image
           src={'/hero.jpeg'}
@@ -49,8 +28,8 @@ export default async function ServiceCard({
           fill
         />
       </div>
-      <div className='p-6'>
-        <h6 className='text-center text-gray-800 mb-2 hover:text-primary-light transition-colors'>
+      <div className='p-6 flex flex-col gap-5'>
+        <h6 className='text-center text-gray-800 hover:text-primary-light transition-colors'>
           {serviceName}
         </h6>
         <p className='text-center text-gray-600 line-clamp-2'>
@@ -58,6 +37,6 @@ export default async function ServiceCard({
         </p>
         <button className='btn-secondary'>More Details</button>
       </div>
-    </div>
+    </Link>
   );
 }

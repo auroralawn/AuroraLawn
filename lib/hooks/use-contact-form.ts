@@ -13,7 +13,7 @@ export const resetFormData = (setFormData: (data: ContactFormData) => void) => {
     city: '',
     state: '',
     zipcode: '',
-    services: [''],
+    services: [],
     message: '',
   });
 };
@@ -44,9 +44,31 @@ export const useContactForm = () => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
 
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    if (type === 'checkbox') {
+      setFormData((prevData) => {
+        if (checked) {
+          return {
+            ...prevData,
+            [name]: [...prevData.services, value],
+          };
+        } else {
+          return {
+            ...prevData,
+            [name]: prevData.services.filter((item) => item !== value),
+          };
+        }
+      });
+    } else {
+      setFormData((prevData) => ({ ...prevData, [name]: value }));
+    }
+  };
+
+  const handleFileSelect = (files: File[]): void => {
+    // Your existing logic here
+    console.log('Selected file:', files);
   };
 
   // Handle form submission
@@ -142,5 +164,6 @@ export const useContactForm = () => {
     submitStatus,
     handleChange,
     handleSubmit,
+    handleFileSelect,
   };
 };
