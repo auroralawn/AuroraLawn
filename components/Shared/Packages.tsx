@@ -3,6 +3,7 @@ import Container from '../layout/Container';
 import Section from '../layout/Section';
 import Card from '../ui/Card';
 import { HiOutlineCheckCircle } from 'react-icons/hi2';
+import Button from '../ui/Button';
 
 export default function Packages() {
   return (
@@ -27,14 +28,18 @@ export default function Packages() {
                   {servicePlans[0].perks.map((perk) => (
                     <div
                       key={perk}
-                      className='flex gap-2 items-start'
+                      className='flex gap-2  items-center'
                     >
-                      <HiOutlineCheckCircle className='mt-1 flex-shrink-0' />
+                      <HiOutlineCheckCircle className=' flex-shrink-0' />
                       <li className='text-start py-2 leading-tight'>{perk}</li>
                     </div>
                   ))}
                 </ul>
               </div>
+              <Button
+                text='Request Plan'
+                link='\contact'
+              />
             </Card>
           </div>
 
@@ -59,9 +64,9 @@ export default function Packages() {
                       {service.perks.map((perk) => (
                         <div
                           key={perk}
-                          className='flex gap-2 items-start'
+                          className='flex gap-2 items-center'
                         >
-                          <HiOutlineCheckCircle className='mt-1 flex-shrink-0' />
+                          <HiOutlineCheckCircle className='flex-shrink-0' />
                           <li className='text-start py-2 leading-tight'>
                             {perk}
                           </li>
@@ -69,6 +74,10 @@ export default function Packages() {
                       ))}
                     </ul>
                   </div>
+                  <Button
+                    text='Request Plan'
+                    link='\contact'
+                  />
                 </Card>
               </div>
             ))}

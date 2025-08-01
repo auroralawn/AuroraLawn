@@ -1,97 +1,36 @@
-'use client';
-
 import { services } from '@/lib/data';
 import Container from '../layout/Container';
 import Section from '../layout/Section';
-import ServiceCard from '../Shared/ServiceCard';
 
-import { useRef } from 'react';
-import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
+import { getImagesByTag, processServiceData } from '@/lib/api/cloudinary';
+import Carousel from '../ui/Carousel';
 
-export default function Services() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+async function getServicesData() {
+  const processedServices = await Promise.all(
+    services.map(async (service) => {
+      const galleryImages = await getImagesByTag(service.galleryTag);
+      const processedData = processServiceData(service, galleryImages);
 
-  const scroll = (direction: string) => {
-    if (scrollContainerRef.current) {
-      // Get the actual rendered width of the first card
-      const firstCard = scrollContainerRef.current.querySelector(
-        '[style*="width: 360px"]'
-      );
-      const cardWidth = firstCard
-        ? firstCard.getBoundingClientRect().width
-        : 360;
-      console.log(cardWidth);
-      const gap = 24; // or calculate dynamically if needed
-      const scrollAmount = cardWidth + gap;
+      return {
+        id: service.id,
+        name: service.name,
+        description: service.description,
+        imageSrc: processedData.src,
+      };
+    })
+  );
+  return processedServices;
+}
 
-      const finalScrollAmount =
-        direction === 'left' ? -scrollAmount : scrollAmount;
-
-      scrollContainerRef.current.scrollBy({
-        left: finalScrollAmount,
-        behavior: 'smooth',
-      });
-    }
-  };
+export default async function Services() {
+  const servicesData = await getServicesData();
 
   return (
     <Section>
       <Container>
         <h4>Our Services</h4>
         <h3>Committed to Exceptional Results</h3>
-
-        <div className='relative w-full max-w-full'>
-          {/* Carousel Container */}
-          <div
-            ref={scrollContainerRef}
-            className='flex gap-6 py-4 px-3'
-            style={{
-              overflowX: 'scroll',
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none',
-              WebkitOverflowScrolling: 'touch',
-            }}
-          >
-            {services.map((service) => (
-              <div
-                key={service.name}
-                className='flex-shrink-0 flex'
-                style={{ width: '360px' }}
-              >
-                <ServiceCard
-                  href={service.id}
-                  serviceName={service.name}
-                  serviceDescrition={service.description}
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Navigation Arrows */}
-          <div className='flex justify-center gap-4 mt-6'>
-            <button
-              onClick={() => scroll('left')}
-              className='flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow border border-gray-200 hover:bg-gray-50'
-              aria-label='Previous services'
-            >
-              <BiChevronLeft className='w-5 h-5 text-gray-600' />
-            </button>
-
-            <button
-              onClick={() => scroll('right')}
-              className='flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow border border-gray-200 hover:bg-gray-50'
-              aria-label='Next services'
-            >
-              <BiChevronRight className='w-5 h-5 text-gray-600' />
-            </button>
-          </div>
-        </div>
-
-        <style jsx>{`
-          div::-webkit-scrollbar {
-            display: none;
-          }
-        `}</style>
+        <Carousel services={servicesData} />
       </Container>
     </Section>
   );

@@ -31,7 +31,7 @@ export default function MobileNavBar({ customClass }: MobileMenuProps) {
       className={`${customClass} fixed top-0 left-0 right-0 bg-white text-gray-700 shadow-md z-50`}
     >
       {/* Fixed Nav Bar - Always visible */}
-      <div className='container mx-auto px-4 py-4 z-30'>
+      <div className='container mx-auto px-4 py-5 z-30'>
         <div className='flex justify-between items-center'>
           {/* Logo */}
           <div>
@@ -76,10 +76,10 @@ export default function MobileNavBar({ customClass }: MobileMenuProps) {
             : 'opacity-0 scale-y-0 origin-top pointer-events-none'
         }`}
         style={{
-          top: '69px',
+          top: '60px',
           left: '0',
           right: '0',
-          height: 'calc(100vh - 69px)',
+          height: 'calc(100vh - 60px)',
         }}
       >
         <div className='container mx-auto px-10 py-8 h-full flex flex-col'>

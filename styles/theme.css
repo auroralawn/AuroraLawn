@@ -13,11 +13,13 @@
   --font-sourceSerif4: var(--font-source-serif-4);
 
   /* Color Palette:  eg. --color-primary: oklch(0.52 0.18 264); */
-  /* --color-primary: #89D9D0; */
+  /* --color-primary: #89d9d0; */
+  /* --color-primary: #ceafd1; */
   --color-primary: #012c32;
   /* --color-primary-light: #bff5ee; */
   --color-primary-light: rgb(12, 133, 149);
   /* --color-secondary: #ceafd1; */
+  /* --color-secondary: #89d9d0; */
   --color-secondary: #036270;
   --color-accent: #64e3a1;
   --color-light-gray: #f4f4f4;

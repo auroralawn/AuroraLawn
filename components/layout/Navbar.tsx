@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { contactInfo, navLinks } from '@/lib/data';
+import Button from '../ui/Button';
 
 interface NavbarProps {
   customClass?: string;
@@ -36,9 +37,11 @@ export default function Navbar({ customClass }: NavbarProps) {
               </Link>
             ))}
           </div>
-          <div>
-            <button className='btn-primary'>{contactInfo[1].content}</button>
-          </div>
+
+          <Button
+            link={contactInfo[1].url}
+            text={contactInfo[1].content}
+          />
         </div>
       </nav>
     </div>

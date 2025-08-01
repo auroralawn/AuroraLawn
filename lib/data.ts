@@ -185,19 +185,19 @@ export const services = [
   {
     id: 'lawn-mowing',
     name: 'Lawn Mowing',
-    // mainImageId: 'lawn-mowing-main',
-    mainImageId: '/Hero.jpg',
+    mainImageId: 'lawn-mowing-main',
+    // mainImageId: '/Hero.jpg',
     galleryTag: 'lawn-mowing',
     description:
       'Elegant, durable paver driveways and pathways that enhance property access while adding distinctive character to your landscape.',
     fullDescription: `Our custom driveways and pathways combine functionality with aesthetic appeal, creating striking first impressions and improving property navigation. Using premium paving materials and expert installation techniques, we ensure these high-traffic areas remain beautiful and functional for decades. From grand circular driveways to charming garden paths, each project is engineered for proper drainage, stability, and visual harmony with your home and surrounding landscape. Transform ordinary transitions into extraordinary features that guide and delight.`,
   },
   {
-    id: 'landscpaing',
-    name: 'Landscpaing',
-    // mainImageId: 'landscpaing-main',
-    mainImageId: '/Hero.jpg',
-    galleryTag: 'landscpaing',
+    id: 'landscaping',
+    name: 'Landscaping',
+    mainImageId: 'landscaping-main',
+    // mainImageId: '/Hero.jpg',
+    galleryTag: 'landscaping',
     description:
       'Elegant, durable paver driveways and pathways that enhance property access while adding distinctive character to your landscape.',
     fullDescription: `Our custom driveways and pathways combine functionality with aesthetic appeal, creating striking first impressions and improving property navigation. Using premium paving materials and expert installation techniques, we ensure these high-traffic areas remain beautiful and functional for decades. From grand circular driveways to charming garden paths, each project is engineered for proper drainage, stability, and visual harmony with your home and surrounding landscape. Transform ordinary transitions into extraordinary features that guide and delight.`,
@@ -205,8 +205,8 @@ export const services = [
   {
     id: 'gardening',
     name: 'Gardening',
-    // mainImageId: 'gardening-main',
-    mainImageId: '/Hero.jpg',
+    mainImageId: 'gardening-main',
+    // mainImageId: '/Hero.jpg',
     galleryTag: 'gardening',
     description:
       'Elegant, durable paver driveways and pathways that enhance property access while adding distinctive character to your landscape.',
@@ -215,8 +215,8 @@ export const services = [
   {
     id: 'decks',
     name: 'Decks',
-    // mainImageId: 'decks-main',
-    mainImageId: '/Hero.jpg',
+    mainImageId: 'decks-main',
+    // mainImageId: '/Hero.jpg',
     galleryTag: 'decks',
     description:
       'Elegant, durable paver driveways and pathways that enhance property access while adding distinctive character to your landscape.',
@@ -225,8 +225,8 @@ export const services = [
   {
     id: 'pond-building',
     name: 'Pond Building',
-    // mainImageId: 'pond-building-main',
-    mainImageId: '/Hero.jpg',
+    mainImageId: 'pond-building-main',
+    // mainImageId: '/Hero.jpg',
     galleryTag: 'pond-building',
     description:
       'Elegant, durable paver driveways and pathways that enhance property access while adding distinctive character to your landscape.',

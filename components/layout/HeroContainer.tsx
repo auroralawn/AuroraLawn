@@ -11,9 +11,6 @@ export default async function HeroContainer({
   subheading = '',
   caption = '',
 }: Readonly<HeroContainerProps>) {
-  //   const HeroImage = await getCloudinaryImageData(imageUrl);
-  // const HeroImage = '/Hero.jpg';
-
   return (
     <div className='mt-30 w-full bg-primary'>
       {/* Overlay & Content */}
