@@ -1,13 +1,76 @@
-@import "tailwindcss";
-
+@import 'tailwindcss';
 @layer utilities {
-    /* Text balance */
-    .text-balance {
-      text-wrap: balance;
-    }
-    
-    /* Full bleed */
-    .full-bleed {
-      @apply w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw];
-    }
+  /* Import fonts if needed */
+
+  /* Text balance */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Full bleed */
+  .full-bleed {
+    @apply w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw];
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+/* Add this to your global CSS file */
+
+.services-swiper {
+  padding-bottom: 50px !important;
+}
+
+/* Navigation arrows */
+.services-swiper .swiper-button-next,
+.services-swiper .swiper-button-prev {
+  color: #3b82f6; /* Adjust to your primary color */
+  background: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.services-swiper .swiper-button-next:hover,
+.services-swiper .swiper-button-prev:hover {
+  background: #f9fafb;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.services-swiper .swiper-button-next::after,
+.services-swiper .swiper-button-prev::after {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Pagination dots */
+.services-swiper .swiper-pagination-bullet {
+  background: #d1d5db;
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+
+.services-swiper .swiper-pagination-bullet-active {
+  background: #3b82f6; /* Adjust to your primary color */
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .services-swiper .swiper-button-next,
+  .services-swiper .swiper-button-prev {
+    display: none;
+  }
 }

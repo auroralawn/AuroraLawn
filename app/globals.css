@@ -1,43 +1,91 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @import '../styles/theme.css';
 @import '../styles/components.css';
 @import '../styles/utilities.css';
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #343434;
 }
 
 /* TODO: Setup Dark Color Scheme */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #ffffff;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
 
-
-/* TODO: Typography 
+/* TODO: Typography  */
 
 @layer base {
-  h1 {
-    @apply text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl;
+  /* Import fonts if needed */
+
+  /* H1 Main Text */
+  h1,
+  .h1-main-text {
+    @apply mb-10 text-5xl sm:text-6xl lg:text-7xl font-bold font-inter leading-20 lg:leading-[103px] text-center;
   }
-  
-  h2 {
-    @apply text-3xl font-semibold mt-12 mb-6 first:mt-0;
+
+  /* H2 Subheading for Hero Sections */
+  h2,
+  .h2-hero-subheading {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold font-inter leading-16 text-left;
   }
-  
-  h3 {
-    @apply text-2xl font-medium mt-8 mb-4;
+
+  /* H3 Section Heading */
+  h3,
+  .h3-section-heading {
+    @apply mb-10 text-center text-xl md:text-2xl lg:text-3xl font-semibold font-sourceSerif4 leading-normal;
+  }
+
+  /* H4 Heading Text */
+  h4,
+  .h4-heading {
+    @apply mb-4 text-center text-base text-secondary md:text-lg font-semibold font-inter md:text-start;
+  }
+
+  /* H5 Sub Heading Light Text */
+  h5,
+  .h5-subheading {
+    @apply mb-4 text-sm md:text-base text-secondary font-extralight text-center;
+  }
+
+  /* Button Text */
+  .button-text {
+    @apply text-sm sm:text-base md:text-xl font-semibold font-inter text-center;
+  }
+
+  /* Paragraphs Normal */
+  p,
+  .paragraph-normal {
+    @apply text-sm font-light font-inter text-left;
+  }
+
+  /* Paragraphs Spaced Out */
+  .paragraph-spaced {
+    @apply text-sm font-light font-inter leading-8 md:leading-10 text-left;
+  }
+
+  /* Paragraph text For centered content */
+  .paragraph-centered {
+    @apply text-sm font-light font-inter leading-5 md:leading-6 text-center;
+  }
+
+  /* Paragraph Bolded Link Text */
+  .paragraph-link {
+    @apply hover:text-accent transition text-black/70;
+  }
+
+  /* Subtitle Text */
+  .subtitle-text {
+    @apply text-sm font-light font-inter text-center text-nowrap text-primary;
   }
 }
-
-*/
-

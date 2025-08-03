@@ -1,20 +1,35 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* TODO: Setup theme for website */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-overlay: rgba(255, 255, 255, 0.2);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
   /* Font Families: */
   --font-inter: var(--font-inter);
-  --font-sourceSerif4: var(--font-sourceSerif4);
+  --font-sourceSerif4: var(--font-source-serif-4);
 
   /* Color Palette:  eg. --color-primary: oklch(0.52 0.18 264); */
-  --color-primary: rgb(73, 34, 95);
-  --color-secondary: white;
-  --color-accent: white;
+  --color-primary: #036270;
+  /* --color-primary: #012c32; */
+  /* --color-primary: #89d9d0; */
+  --color-primary-light: #bff5ee;
+  /* --color-primary-light: rgb(12, 133, 149); */
+  --color-secondary: #89d9d0;
+  /* --color-secondary: #036270; */
+
+  /* --color-accent: #64e3a1; */
+  --color-accent: #ceafd1;
+  /* --color-accent: #036270; */
+  --color-light-gray: #f4f4f4;
+  --color-gray-border: rgba(0, 0, 0, 0.25);
+  --color-facebook-blue: #0666fe;
+
+  /* --color-secondary: #ceafd1; */
+  /* --color-primary: #ceafd1; */
 
   /* Extended Colors */
   --color-success: oklch(0.8 0.15 145);
