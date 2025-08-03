@@ -4,7 +4,7 @@ import Card from '../ui/Card';
 
 export default function CallToAction() {
   return (
-    <Section customClass='bg-secondary'>
+    <Section customClass='bg-primary'>
       <Container>
         <Card
           url='/contact'
@@ -17,7 +17,7 @@ export default function CallToAction() {
             Join the Aurora family and experience personalized service that
             treats your property like our own.
           </h5>
-          <button className='btn-secondary'>Request a Quote</button>
+          <button className='btn-primary'>Request a Quote</button>
         </Card>
       </Container>
     </Section>

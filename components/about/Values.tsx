@@ -8,7 +8,7 @@ export default function Values() {
   return (
     <Section customClass='bg-light-gray'>
       <Container>
-        <h3 className='text-center'>Quick & Simple Process</h3>
+        <h3 className='text-center'>Our Values at Aurora</h3>
         <div className='w-full md:flex justify-between'>
           {companyValues.map((value) => (
             <Trait
