@@ -10,7 +10,7 @@ export default function Hero() {
     <section className='relative min-h-screen w-full overflow-hidden'>
       {/* Background Image */}
       <Image
-        src={HeroImage} // <-- Replace with your image
+        src={HeroImage}
         alt='Lawn background'
         fill
         priority
@@ -29,7 +29,7 @@ export default function Hero() {
               Proudly Servicing
             </h1>
             <h2 className=' text-5xl md:text-8xl md:leading-32 text-secondary text-center xl:text-start'>
-              Minnesota’s Lawns,
+              Minnesota’s Lawns
             </h2>
             <h3 className='text-4xl md:text-5xl text-white text-center xl:text-start mt-2'>
               Season After Season

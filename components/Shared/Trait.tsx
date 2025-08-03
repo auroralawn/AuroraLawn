@@ -11,9 +11,9 @@ export default function Trait({ icon: Icon, name, description }: ProcessProps) {
     <div className='flex flex-col items-center m-10'>
       <Icon
         size={120}
-        className='text-primary-light'
+        className='text-primary'
       />
-      <h5>{name}</h5>
+      <h5 className='text-primary'>{name}</h5>
       <p className='text-center max-w-[20rem]'>{description}</p>
     </div>
   );

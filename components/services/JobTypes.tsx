@@ -10,10 +10,10 @@ export default function JobTypes() {
         <div className='lg:flex justify-between gap-10 lg:pb-0'>
           {/* Type of Job 2 */}
           <div className='flex flex-col gap-2 lg:gap-6 justify-center items-center lg:mx-20'>
-            <h4>Project-Based Work</h4>
+            <h4 className='text-accent'>Project-Based Work</h4>
             <PiPlant
               size={120}
-              className='text-secondary'
+              className='text-primary'
             />
             <p className='text-center lg:max-w-[22rem]'>
               Custom landscape design, pond construction, deck building, and
@@ -22,14 +22,14 @@ export default function JobTypes() {
             {/* <button className='btn-primary'>Explore Services</button> */}
           </div>
 
-          <h3 className='text-primary pt-10'>Vs</h3>
+          <h3 className='text-accent pt-10'>Vs</h3>
 
           {/* Type of Job 1 */}
           <div className='flex flex-col gap-2 lg:gap-6 justify-center items-center lg:mx-20'>
-            <h4>Recurring Service</h4>
+            <h4 className='text-accent'>Recurring Service</h4>
             <GiCycle
               size={120}
-              className='text-secondary'
+              className='text-primary'
             />
             <p className='text-center lg:max-w-[22rem]'>
               Choose from Basic, Advanced, or Premium monthly plans for
