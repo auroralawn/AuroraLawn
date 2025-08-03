@@ -20,18 +20,6 @@
 //     handleFileSelect,
 //   } = useContactForm();
 
-//   return submitted ? (
-//     <div className='text-center p-10 bg-accent rounded-xl'>
-//       <h3 className='text-2xl font-semibold text-primary'>Thank you!</h3>
-//       <p className='text-lg mt-2'>
-//         Your message has been sent successfully. We’ll be in touch soon.
-//       </p>
-//     </div>
-//   ) : (
-
-//       </form>
-//     </div>
-//   );
 // }
 
 import React, { useState } from 'react';
@@ -54,6 +42,7 @@ interface ContactFormData {
 import { usePathname } from 'next/navigation';
 import { servicePlans, services } from '@/lib/data';
 import InputField from '../ui/InputField';
+import CustomFileUpload from '../ui/CustomFileUpload';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -391,7 +380,7 @@ const ContactForm = () => {
           />
         </div>
 
-        {/* <CustomFileUpload
+        <CustomFileUpload
           onFileSelect={handleFileSelect}
           multiple={true}
           maxFiles={5}
@@ -399,7 +388,7 @@ const ContactForm = () => {
           required={true}
           name='image'
           id='image-input'
-        /> */}
+        />
 
         <button
           type='submit'
@@ -417,6 +406,11 @@ const ContactForm = () => {
       </form>
     </div>
   );
+};
+
+const handleFileSelect = (files: File[]): void => {
+  // Your existing logic here
+  console.log('Selected file:', files);
 };
 
 export default ContactForm;
