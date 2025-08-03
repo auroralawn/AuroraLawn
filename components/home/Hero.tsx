@@ -1,12 +1,16 @@
 import Image from 'next/image';
 import ContactForm from '../Shared/ContactForm';
+import { getCloudinaryImageData } from '@/lib/api/cloudinary';
 
 export default function Hero() {
+  const imageUrl = 'packages_hero';
+  const HeroImage = getCloudinaryImageData(imageUrl);
+
   return (
     <section className='relative min-h-screen w-full overflow-hidden'>
       {/* Background Image */}
       <Image
-        src={'/Hero.jpeg' || ""} // <-- Replace with your image
+        src={HeroImage} // <-- Replace with your image
         alt='Lawn background'
         fill
         priority
@@ -38,7 +42,7 @@ export default function Hero() {
           </div>
 
           {/* Right Side: Form */}
-          <div className='smd:w-1/2'>
+          <div className='md:w-1/2'>
             <ContactForm />
           </div>
         </div>

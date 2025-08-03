@@ -3,10 +3,14 @@ import Values from '@/components/about/Values';
 import Container from '@/components/layout/Container';
 import HeroContainer from '@/components/layout/HeroContainer';
 import Section from '@/components/layout/Section';
+import { getCloudinaryImageData } from '@/lib/api/cloudinary';
 import Image from 'next/image';
 import React from 'react';
 
 export default function page() {
+  const imageUrl = 'about-hero';
+  const HeroImage = getCloudinaryImageData(imageUrl);
+
   return (
     <div className='flex flex-col bg-primary'>
       <HeroContainer
@@ -19,7 +23,7 @@ export default function page() {
           <h4>Meet The Team</h4>
           <h3>The Team That Makes it Happen</h3>
           <Image
-            src={'/hero.jpeg' || ""}
+            src={HeroImage}
             alt='about'
             width={1100}
             height={300}

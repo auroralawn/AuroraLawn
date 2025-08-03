@@ -2,8 +2,12 @@ import { companyName } from '@/lib/data';
 import Section from '../layout/Section';
 import Image from 'next/image';
 import Container from '../layout/Container';
+import { getCloudinaryImageData } from '@/lib/api/cloudinary';
 
 export default function About() {
+  const imageUrl = 'about-hero';
+  const HeroImage = getCloudinaryImageData(imageUrl);
+
   return (
     <Section>
       <Container>
@@ -28,7 +32,7 @@ export default function About() {
             />
           </div>
           <Image
-            src={'/Hero.jpg' || ""}
+            src={HeroImage}
             alt='Fam'
             width={600}
             height={200}

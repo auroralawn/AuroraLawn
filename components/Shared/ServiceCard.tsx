@@ -25,7 +25,7 @@ export default function ServiceCard({
     >
       <div className='relative h-64'>
         <Image
-          src={imgSrc || '/Hero.jpeg'}
+          src={imgSrc}
           alt={serviceName}
           className='object-cover group-hover:scale-105 transition-transform duration-300'
           fill

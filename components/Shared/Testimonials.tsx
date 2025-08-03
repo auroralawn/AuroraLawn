@@ -2,8 +2,11 @@ import { testimonials } from '@/lib/data';
 import Container from '../layout/Container';
 import Section from '../layout/Section';
 import Image from 'next/image';
+import { getCloudinaryImageData } from '@/lib/api/cloudinary';
 
 export default function Testimonials() {
+  const imageUrl = 'about-hero';
+  const HeroImage = getCloudinaryImageData(imageUrl);
   return (
     <Section>
       <Container>
@@ -25,11 +28,11 @@ export default function Testimonials() {
             ))}
           </div>
           <Image
-            src={'/Hero.jpg' || ""}
+            src={HeroImage}
             alt='Test'
             width={700}
             height={300}
-            className='rounded'
+            className='rounded-lg'
           />
         </div>
       </Container>

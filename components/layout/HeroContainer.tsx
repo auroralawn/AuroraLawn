@@ -4,7 +4,7 @@ interface HeroContainerProps {
   caption?: string;
 }
 
-export default async function HeroContainer({
+export default function HeroContainer({
   page = 'Home',
   subheading = '',
   caption = '',

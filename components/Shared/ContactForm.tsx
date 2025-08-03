@@ -1,27 +1,5 @@
 'use client';
 
-// import { servicePlans, services } from '@/lib/data';
-// import InputField from '../ui/InputField';
-// import { useContactForm } from '@/lib/hooks/use-contact-form';
-// import CustomFileUpload from '../ui/CustomFileUpload';
-
-// interface ContactFormProps {
-//   customClass?: string;
-// }
-
-// export default function ContactForm({ customClass }: ContactFormProps) {
-//   const {
-//     formData,
-//     submitted,
-//     isSubmitting,
-//     submitStatus,
-//     handleChange,
-//     handleSubmit,
-//     handleFileSelect,
-//   } = useContactForm();
-
-// }
-
 import React, { useState } from 'react';
 
 interface ContactFormData {
@@ -35,6 +13,7 @@ interface ContactFormData {
   zip: string;
   services: string[];
   subscriptions: string[];
+  grassLength: string; // Added grass length field
   message: string;
 }
 
@@ -56,6 +35,7 @@ const ContactForm = () => {
     zip: '',
     services: [],
     subscriptions: [],
+    grassLength: '', // Initialize grass length
     message: '',
   });
 
@@ -68,7 +48,9 @@ const ContactForm = () => {
   // const { token, loading, refresh } = useRecaptcha('contact_form');
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value, type } = e.target;
     const checked = (e.target as HTMLInputElement).checked;
@@ -170,6 +152,7 @@ const ContactForm = () => {
           zip: '',
           services: [],
           subscriptions: [],
+          grassLength: '', // Reset grass length
           message: '',
         });
         // Get a fresh token for next submission
@@ -298,6 +281,49 @@ const ContactForm = () => {
           />
         </div>
 
+        {/* Grass Length Selection */}
+        <div className='relative'>
+          <label
+            htmlFor='grass-length-input'
+            className='absolute left-3 -top-2 bg-white px-1 text-sm text-gray-500'
+          >
+            Lawn Grass Length *
+          </label>
+          <select
+            name='grassLength'
+            id='grass-length-input'
+            value={formData.grassLength}
+            onChange={handleChange}
+            required
+            className='w-full p-3 rounded-lg border border-gray-300 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all appearance-none bg-white'
+          >
+            <option
+              value=''
+              disabled
+            >
+              Please select grass length
+            </option>
+            <option value='less-than-6in'>Less than 6 inches</option>
+            <option value='more-than-6in'>More than 6 inches</option>
+          </select>
+          {/* Custom dropdown arrow */}
+          <div className='absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none'>
+            <svg
+              className='w-4 h-4 text-gray-400'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M19 9l-7 7-7-7'
+              />
+            </svg>
+          </div>
+        </div>
+
         <div className='relative'>
           <label
             htmlFor='services-input'
@@ -307,7 +333,7 @@ const ContactForm = () => {
           </label>
           <div className='grid grid-cols-2 p-3 rounded-lg border border-gray-300 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent'>
             <div>
-              <p className='text-secondary'>Project Services</p>
+              <p className='text-primary'>Project Services</p>
               {services.map((service) => (
                 <div
                   key={service.id}
@@ -332,7 +358,7 @@ const ContactForm = () => {
               ))}
             </div>
             <div>
-              <p className='text-secondary'>Subscription Services</p>
+              <p className='text-primary'>Subscription Services</p>
               {servicePlans.map((plan) => (
                 <div
                   key={plan.id}
@@ -352,7 +378,7 @@ const ContactForm = () => {
                     className='text-xs md:text-sm text-gray-600'
                   >
                     <p>
-                      <span className='text-secondary'> ${plan.price}</span>{' '}
+                      <span className='text-primary'> ${plan.price}</span>{' '}
                       {plan.name}
                     </p>
                   </label>
