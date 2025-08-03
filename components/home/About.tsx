@@ -28,7 +28,7 @@ export default function About() {
             />
           </div>
           <Image
-            src={'/Hero.jpg'}
+            src={'/Hero.jpg' || ""}
             alt='Fam'
             width={600}
             height={200}

@@ -25,7 +25,7 @@ export default function Testimonials() {
             ))}
           </div>
           <Image
-            src={'/Hero.jpg'}
+            src={'/Hero.jpg' || ""}
             alt='Test'
             width={700}
             height={300}

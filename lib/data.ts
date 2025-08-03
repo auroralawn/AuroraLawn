@@ -186,7 +186,6 @@ export const services = [
     id: 'lawn-mowing',
     name: 'Lawn Mowing',
     mainImageId: 'lawn-mowing-main',
-    // mainImageId: '/Hero.jpg',
     galleryTag: 'lawn-mowing',
     description:
       'Elegant, durable paver driveways and pathways that enhance property access while adding distinctive character to your landscape.',
@@ -196,7 +195,6 @@ export const services = [
     id: 'landscaping',
     name: 'Landscaping',
     mainImageId: 'landscaping-main',
-    // mainImageId: '/Hero.jpg',
     galleryTag: 'landscaping',
     description:
       'Elegant, durable paver driveways and pathways that enhance property access while adding distinctive character to your landscape.',
@@ -206,7 +204,6 @@ export const services = [
     id: 'gardening',
     name: 'Gardening',
     mainImageId: 'gardening-main',
-    // mainImageId: '/Hero.jpg',
     galleryTag: 'gardening',
     description:
       'Elegant, durable paver driveways and pathways that enhance property access while adding distinctive character to your landscape.',
@@ -216,7 +213,6 @@ export const services = [
     id: 'decks',
     name: 'Decks',
     mainImageId: 'decks-main',
-    // mainImageId: '/Hero.jpg',
     galleryTag: 'decks',
     description:
       'Elegant, durable paver driveways and pathways that enhance property access while adding distinctive character to your landscape.',
@@ -226,7 +222,6 @@ export const services = [
     id: 'pond-building',
     name: 'Pond Building',
     mainImageId: 'pond-building-main',
-    // mainImageId: '/Hero.jpg',
     galleryTag: 'pond-building',
     description:
       'Elegant, durable paver driveways and pathways that enhance property access while adding distinctive character to your landscape.',

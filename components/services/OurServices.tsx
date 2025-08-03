@@ -33,7 +33,6 @@ export default async function OurServices() {
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 auto-rows-fr mb-6'>
           {servicesData.slice(0, 3).map((service) => (
             <ServiceCard
-              // src='/Hero.jpg'
               key={service.id}
               id={service.id}
               imgSrc={service.imageSrc}
@@ -45,7 +44,6 @@ export default async function OurServices() {
         <div className='grid grid-cols-1 md:grid-cols-2  gap-6 auto-rows-fr'>
           {servicesData.slice(3, 5).map((service) => (
             <ServiceCard
-              // src='/Hero.jpg'
               key={service.id}
               id={service.id}
               imgSrc={service.imageSrc}

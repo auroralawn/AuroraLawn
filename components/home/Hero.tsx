@@ -6,7 +6,7 @@ export default function Hero() {
     <section className='relative min-h-screen w-full overflow-hidden'>
       {/* Background Image */}
       <Image
-        src='/Hero.jpeg' // <-- Replace with your image
+        src={'/Hero.jpeg' || ""} // <-- Replace with your image
         alt='Lawn background'
         fill
         priority

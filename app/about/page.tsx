@@ -19,7 +19,7 @@ export default function page() {
           <h4>Meet The Team</h4>
           <h3>The Team That Makes it Happen</h3>
           <Image
-            src={'/hero.jpeg'}
+            src={'/hero.jpeg' || ""}
             alt='about'
             width={1100}
             height={300}
