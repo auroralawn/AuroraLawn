@@ -24,14 +24,14 @@ export default function Hero() {
       <div className='relative z-20 flex items-center justify-center min-h-screen mt-20 '>
         <div className=' w-full max-w-7xl flex flex-col xl:flex-row items-center justify-between xl:gap-12 rounded-xl'>
           {/* Left Side: Text */}
-          <div className='px-4 w-full md:w-2/3 space-y-2 text-center sm:text-start'>
-            <h1 className='text-5xl text-white text-center xl:text-start'>
+          <div className='px-4 w-full md:w-2/3 space-y-1 text-center sm:text-start'>
+            <h1 className='text-4xl md:text-5xl text-white text-center xl:text-start'>
               Proudly Servicing
             </h1>
-            <h2 className='md:text-8xl md:leading-32 text-primary text-center xl:text-start'>
+            <h2 className=' text-5xl md:text-8xl md:leading-32 text-secondary text-center xl:text-start'>
               Minnesota’s Lawns,
             </h2>
-            <h3 className='text-5xl text-white text-center xl:text-start'>
+            <h3 className='text-4xl md:text-5xl text-white text-center xl:text-start mt-2'>
               Season After Season
             </h3>
             <p className='text-white text-center xl:text-start'>
