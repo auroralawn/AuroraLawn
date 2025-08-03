@@ -1,5 +1,3 @@
-// import { getCloudinaryImageData } from '@/lib/api/cloudinary';
-
 interface HeroContainerProps {
   page: string;
   subheading?: string;
