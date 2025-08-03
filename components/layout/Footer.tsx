@@ -24,7 +24,7 @@ export default function Footer() {
           href={'/'}
           className='flex flex-col justify-center items-center  mb-6'
         >
-          <h4 className='font-medium leading-0 tracking-normal text-accent'>
+          <h4 className='font-medium leading-0 tracking-normal '>
             Aurora Lawn & Landscaping
           </h4>
           <p className='text-center text-xs opacity-50 mb-4'>
@@ -39,7 +39,7 @@ export default function Footer() {
           />
         </Link>
         <div className='flex flex-col justify-center items-center mb-10'>
-          <h5 className='text-accent font-medium'>Get in touch</h5>
+          <h5 className='font-medium'>Get in touch</h5>
           <div className='flex flex-col justify-center items-center lg:items-start text-center lg:text-left gap-2'>
             {contactInfo.map((contact) => (
               <Link

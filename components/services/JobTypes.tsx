@@ -10,7 +10,7 @@ export default function JobTypes() {
         <div className='lg:flex justify-between gap-10 lg:pb-0'>
           {/* Type of Job 2 */}
           <div className='flex flex-col gap-2 lg:gap-6 justify-center items-center lg:mx-20'>
-            <h4 className='text-accent'>Project-Based Work</h4>
+            <h4>Project-Based Work</h4>
             <PiPlant
               size={120}
               className='text-primary'
@@ -26,7 +26,7 @@ export default function JobTypes() {
 
           {/* Type of Job 1 */}
           <div className='flex flex-col gap-2 lg:gap-6 justify-center items-center lg:mx-20'>
-            <h4 className='text-accent'>Recurring Service</h4>
+            <h4>Recurring Service</h4>
             <GiCycle
               size={120}
               className='text-primary'

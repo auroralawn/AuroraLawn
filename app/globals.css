@@ -49,13 +49,13 @@ body {
   /* H4 Heading Text */
   h4,
   .h4-heading {
-    @apply mb-4 text-center text-base text-secondary md:text-lg font-semibold font-inter md:text-start;
+    @apply mb-4 text-center text-base text-accent md:text-lg font-semibold font-inter md:text-start;
   }
 
   /* H5 Sub Heading Light Text */
   h5,
   .h5-subheading {
-    @apply mb-4 text-sm md:text-base text-secondary font-extralight text-center;
+    @apply mb-4 text-sm md:text-base text-accent font-extralight text-center;
   }
 
   /* Button Text */

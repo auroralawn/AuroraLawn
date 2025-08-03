@@ -13,9 +13,7 @@ export default function About() {
       <Container>
         <div className='my-10 xl:my-0 flex flex-col items-center gap-10 xl:gap-0 xl:flex-row'>
           <div className='xl:mx-10'>
-            <h4 className='text-center text-accent'>
-              Your Local Landscaping Experts
-            </h4>
+            <h4 className='text-center '>Your Local Landscaping Experts</h4>
             <h3>{companyName}</h3>
             <p className='text-center'>
               Welcome to Aurora Lawn & Landscaping! We&apos;re a local Minnesota

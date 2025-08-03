@@ -20,7 +20,7 @@ export default function page() {
       />
       <Section customClass='bg-white flex flex-col justify-center items-center'>
         <Container>
-          <h4 className='text-accent'>Meet The Team</h4>
+          <h4>Meet The Team</h4>
           <h3>The Team That Makes it Happen</h3>
           <Image
             src={HeroImage}

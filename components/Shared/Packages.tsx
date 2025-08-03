@@ -27,7 +27,7 @@ export default function Packages() {
 
       <Section>
         <Container customClass='relative z-10'>
-          <h4>Need Regular Maintenance?</h4>
+          <h4 className='text-white'>Need Regular Maintenance?</h4>
           <h3>Subscription Services - Transparent Pricing</h3>
           <div className='my-container max-w-[75rem] flex flex-col gap-10 justify-center items-center '>
             <div className='w-full group'>

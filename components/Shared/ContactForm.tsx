@@ -182,7 +182,7 @@ const ContactForm = () => {
         className='bg-white p-4 rounded-lg flex flex-col gap-3'
         onSubmit={handleSubmit}
       >
-        <h5 className='text-center text-accent font-bold'>Request a Quote</h5>
+        <h5 className='text-center font-bold'>Request a Quote</h5>
         {submitStatus.type === 'success' && (
           <div className='p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg'>
             {submitStatus.message}

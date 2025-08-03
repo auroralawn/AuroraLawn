@@ -28,7 +28,7 @@ export default async function OurServices() {
   return (
     <Section customClass='bg-white'>
       <Container>
-        <h4 className='text-accent'>Our Services</h4>
+        <h4>Our Services</h4>
         <h3>Committed to Exceptional Results</h3>
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 auto-rows-fr mb-6'>
           {servicesData.slice(0, 3).map((service) => (
