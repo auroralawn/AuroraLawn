@@ -13,8 +13,9 @@ interface ContactFormData {
   zip: string;
   services: string[];
   subscriptions: string[];
-  grassLength: string; // Added grass length field
+  grassLength: string;
   message: string;
+  files: File[]; // Added files array
 }
 
 // import { useRecaptcha } from '@/hooks/useRecaptcha';
@@ -35,8 +36,9 @@ const ContactForm = () => {
     zip: '',
     services: [],
     subscriptions: [],
-    grassLength: '', // Initialize grass length
+    grassLength: '',
     message: '',
+    files: [], // Initialize files array
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -44,8 +46,7 @@ const ContactForm = () => {
     type: 'success' | 'error' | null;
     message: string;
   }>({ type: null, message: '' });
-  const pathname = usePathname(); // Get current route path
-  // const { token, loading, refresh } = useRecaptcha('contact_form');
+  const pathname = usePathname();
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -88,50 +89,75 @@ const ContactForm = () => {
     }
   };
 
+  // Handle file selection
+  const handleFileSelect = (files: File[]): void => {
+    console.log('Selected files:', files);
+    setFormData((prev) => ({ ...prev, files }));
+  };
+
+  // Convert files to base64 for JSON transmission (alternative approach)
+  const filesToBase64 = async (
+    files: File[]
+  ): Promise<Array<{ name: string; content: string; type: string }>> => {
+    const filePromises = files.map((file) => {
+      return new Promise<{ name: string; content: string; type: string }>(
+        (resolve) => {
+          const reader = new FileReader();
+          reader.onload = () => {
+            resolve({
+              name: file.name,
+              content: reader.result as string,
+              type: file.type,
+            });
+          };
+          reader.readAsDataURL(file);
+        }
+      );
+    });
+
+    return Promise.all(filePromises);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // if (!token) {
-    //   setSubmitStatus({
-    //     type: 'error',
-    //     message: 'reCAPTCHA not available. Please refresh the page.',
-    //   });
-    //   return;
-    // }
 
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: '' });
 
     try {
-      // // First verify the captcha
-      // const captchaResponse = await fetch('/api/verify-captcha', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify({ token }),
-      // });
+      // Convert files to base64 if there are any
+      let processedFiles: Array<{
+        name: string;
+        content: string;
+        type: string;
+      }> = [];
+      if (formData.files && formData.files.length > 0) {
+        processedFiles = await filesToBase64(formData.files);
+      }
 
-      // const captchaResult = await captchaResponse.json();
+      // Prepare form data for submission
+      const submissionData = {
+        ...formData,
+        files: processedFiles, // Send processed files instead of File objects
+        pageUri: `http://localhost:3000${pathname}`,
+      };
 
-      // if (!captchaResult.success) {
-      //   setSubmitStatus({
-      //     type: 'error',
-      //     message: 'CAPTCHA verification failed. Please try again.',
-      //   });
-      //   return;
-      // }
+      // Remove the File objects from the data since they can't be JSON stringified
+      const { files: _, ...jsonSafeData } = formData;
+      const finalSubmissionData = {
+        ...jsonSafeData,
+        files: processedFiles,
+        pageUri: `http://localhost:3000${pathname}`,
+      };
 
-      // If CAPTCHA verification succeeds, proceed with form submission
+      console.log('Submitting data:', finalSubmissionData);
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...formData, // Include all form fields
-          pageUri: `http://localhost:3000${pathname}`, // Add dynamic URL
-        }),
+        body: JSON.stringify(finalSubmissionData),
       });
 
       const data = await response.json();
@@ -152,11 +178,10 @@ const ContactForm = () => {
           zip: '',
           services: [],
           subscriptions: [],
-          grassLength: '', // Reset grass length
+          grassLength: '',
           message: '',
+          files: [],
         });
-        // Get a fresh token for next submission
-        // refresh();
       } else {
         setSubmitStatus({
           type: 'error',
@@ -164,7 +189,7 @@ const ContactForm = () => {
         });
       }
     } catch (error) {
-      console.error('Unexpected error occured contactForm', error);
+      console.error('Unexpected error occurred contactForm', error);
       setSubmitStatus({
         type: 'error',
         message: 'An unexpected error occurred. Please try again later.',
@@ -175,14 +200,12 @@ const ContactForm = () => {
   };
 
   return (
-    <div //${customClass}
-      className={` mx-4 my-8 max-w-[35rem] md:mx-auto md:w-full`}
-    >
+    <div className='mx-4 my-8 max-w-[35rem] md:mx-auto md:w-full'>
       <form
         className='bg-white p-4 rounded-lg flex flex-col gap-3'
         onSubmit={handleSubmit}
       >
-        <h5 className='text-center font-bold'>Request a Quote</h5>
+        <h5 className='text-center text-gray-700'>Request a Quote</h5>
         {submitStatus.type === 'success' && (
           <div className='p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg'>
             {submitStatus.message}
@@ -193,6 +216,7 @@ const ContactForm = () => {
             {submitStatus.message}
           </div>
         )}
+
         {/* Name Fields */}
         <div className='flex gap-2'>
           <div className='relative flex-1'>
@@ -218,6 +242,7 @@ const ContactForm = () => {
             />
           </div>
         </div>
+
         <div className='relative'>
           <InputField
             label='Email'
@@ -229,6 +254,7 @@ const ContactForm = () => {
             required
           />
         </div>
+
         <div className='relative'>
           <InputField
             label='Phone'
@@ -240,6 +266,7 @@ const ContactForm = () => {
             required
           />
         </div>
+
         <div className='relative'>
           <InputField
             label='Street Address'
@@ -251,6 +278,7 @@ const ContactForm = () => {
             required
           />
         </div>
+
         <div className='relative flex gap-2'>
           <InputField
             label='City'
@@ -303,10 +331,9 @@ const ContactForm = () => {
             >
               Please select grass length
             </option>
-            <option value='less-than-6in'>Less than 6 inches</option>
-            <option value='more-than-6in'>More than 6 inches</option>
+            <option value='under_6_inches'>Less than 6 inches</option>
+            <option value='over_6_inches'>More than 6 inches</option>
           </select>
-          {/* Custom dropdown arrow */}
           <div className='absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none'>
             <svg
               className='w-4 h-4 text-gray-400'
@@ -324,6 +351,7 @@ const ContactForm = () => {
           </div>
         </div>
 
+        {/* Services */}
         <div className='relative'>
           <label
             htmlFor='services-input'
@@ -333,7 +361,7 @@ const ContactForm = () => {
           </label>
           <div className='grid grid-cols-2 p-3 rounded-lg border border-gray-300 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent'>
             <div>
-              <p className='text-primary'>Project Services</p>
+              <p className='text-secondary'>Project Services</p>
               {services.map((service) => (
                 <div
                   key={service.id}
@@ -358,7 +386,7 @@ const ContactForm = () => {
               ))}
             </div>
             <div>
-              <p className='text-primary'>Subscription Services</p>
+              <p className='text-secondary'>Subscription Services</p>
               {servicePlans.map((plan) => (
                 <div
                   key={plan.id}
@@ -378,7 +406,7 @@ const ContactForm = () => {
                     className='text-xs md:text-sm text-gray-600'
                   >
                     <p>
-                      <span className='text-primary'> ${plan.price}</span>{' '}
+                      <span className='text-secondary'> ${plan.price}</span>{' '}
                       {plan.name}
                     </p>
                   </label>
@@ -388,6 +416,7 @@ const ContactForm = () => {
           </div>
         </div>
 
+        {/* Message */}
         <div className='relative'>
           <label
             htmlFor='message-input'
@@ -406,37 +435,46 @@ const ContactForm = () => {
           />
         </div>
 
+        {/* File Upload */}
         <CustomFileUpload
           onFileSelect={handleFileSelect}
           multiple={true}
           maxFiles={5}
-          accept='image/*,.pdf,.doc'
-          required={true}
-          name='image'
-          id='image-input'
+          accept='image/*,.pdf,.doc,.docx'
+          required={false}
+          name='files'
+          id='files-input'
         />
+
+        {/* Show selected files */}
+        {formData.files && formData.files.length > 0 && (
+          <div className='text-sm text-gray-600'>
+            <p className='font-medium mb-1'>Selected files:</p>
+            <ul className='list-disc list-inside'>
+              {formData.files.map((file, index) => (
+                <li
+                  key={index}
+                  className='truncate'
+                >
+                  {file.name} ({(file.size / 1024).toFixed(1)}KB)
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <button
           type='submit'
-          disabled={isSubmitting} // || loading || !token}
-          className={`w-full btn-primary transition-all transform  active:scale-95 ${
-            isSubmitting // || loading || !token
-              ? 'opacity-70 cursor-not-allowed'
-              : ''
+          disabled={isSubmitting}
+          className={`w-full btn-primary transition-all transform active:scale-95 ${
+            isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
           }`}
         >
-          {isSubmitting //|| loading
-            ? 'Sending...'
-            : 'Send Message'}
+          {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>
       </form>
     </div>
   );
-};
-
-const handleFileSelect = (files: File[]): void => {
-  // Your existing logic here
-  console.log('Selected file:', files);
 };
 
 export default ContactForm;
