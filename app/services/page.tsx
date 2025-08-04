@@ -13,8 +13,8 @@ export default function page() {
         caption='We deliver exceptional results that exceed expectations every time. Honest pricing, reliable service, and promises we always keep. Your satisfaction is our priority from start to finish.'
       />
       <JobTypes />
-      <OurServices />
       <Packages />
+      <OurServices />
       <CallToAction />
     </div>
   );

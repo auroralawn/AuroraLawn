@@ -8,7 +8,7 @@ export default function Testimonials() {
   const imageUrl = 'about-hero';
   const HeroImage = getCloudinaryImageData(imageUrl);
   return (
-    <Section>
+    <Section customClass='bg-light-gray'>
       <Container>
         <div className='flex flex-col justify-center items-center xl:flex-row xlsss:justify-between'>
           <div className='xl:mr-10 max-w-2xl'>
