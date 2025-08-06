@@ -3,7 +3,7 @@ import ContactForm from '../Shared/ContactForm';
 import { getCloudinaryImageData } from '@/lib/api/cloudinary';
 
 export default function Hero() {
-  const imageUrl = 'packages_hero';
+  const imageUrl = 'hero_main';
   const HeroImage = getCloudinaryImageData(imageUrl);
 
   return (

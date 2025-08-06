@@ -10,14 +10,15 @@ export default function CallToAction() {
           url='/contact'
           customClass='w-full py-8 md:py-16 px-2 md:px-30 flex justify-center items-center'
         >
-          <h4 className='text-center'>
-            Looking for reliable lawn care you can trust?
-          </h4>
+          <h4 className='text-center'>Ready for a lawn that stands out?</h4>
           <h5 className='text-black/95'>
-            Join the Aurora family and experience personalized service that
-            treats your property like our own.
+            Get your <span className='text-accent font-black'>FREE</span> quote
+            today and discover why Aurora is the trusted choice for premium lawn
+            care.
           </h5>
-          <button className='btn-primary'>Request a Quote</button>
+          <button className='btn-primary hover:scale-105'>
+            Get Your FREE Quote →
+          </button>
         </Card>
       </Container>
     </Section>

@@ -31,7 +31,7 @@ export default function Footer() {
             Transforming Spaces, Creating Experiences
           </p>
           <Image
-            src='/logo.png'
+            src='/AuroraLogo.webp'
             alt='Aurora Lawn & Landscaping Logo'
             width={120}
             height={120}

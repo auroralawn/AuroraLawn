@@ -5,8 +5,8 @@ import Container from '../layout/Container';
 import { getCloudinaryImageData } from '@/lib/api/cloudinary';
 
 export default function About() {
-  const imageUrl = 'about-hero';
-  const HeroImage = getCloudinaryImageData(imageUrl);
+  // const imageUrl = 'hero_main';
+  // const HeroImage = getCloudinaryImageData(imageUrl);
 
   return (
     <Section>
@@ -15,7 +15,7 @@ export default function About() {
           <div className='xl:mx-10'>
             <h4 className='text-center '>Your Local Landscaping Experts</h4>
             <h3>{companyName}</h3>
-            <p className='text-center'>
+            <p className='text-center leading-xl'>
               Welcome to Aurora Lawn & Landscaping! We&apos;re a local Minnesota
               team passionate about creating beautiful outdoor spaces throughout
               Minnesota. As a newly established company, we&apos;re excited to
@@ -32,9 +32,9 @@ export default function About() {
             /> */}
           </div>
           <Image
-            src={HeroImage}
+            src={'/AuroraLogoBig.webp'}
             alt='Fam'
-            width={600}
+            width={900}
             height={200}
             className='rounded-lg'
           />

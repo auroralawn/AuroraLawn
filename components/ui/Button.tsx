@@ -20,8 +20,11 @@ export default function Button({
   //       : 'bg-[#FF8106]/95 text-white hover:bg-[#ff7206]';
 
   return (
-    <Link href={link}>
-      <button className={` btn-primary`}>{text}</button>
+    <Link
+      href={link}
+      className={`btn-primary hover:scale-105 transition-all`}
+    >
+      {text}
     </Link>
   );
 }

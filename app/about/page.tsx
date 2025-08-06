@@ -8,8 +8,8 @@ import Image from 'next/image';
 import React from 'react';
 
 export default function page() {
-  const imageUrl = 'about-hero';
-  const HeroImage = getCloudinaryImageData(imageUrl);
+  // const imageUrl = 'about-hero';
+  // const HeroImage = getCloudinaryImageData(imageUrl);
 
   return (
     <div className='flex flex-col bg-primary'>
@@ -23,9 +23,9 @@ export default function page() {
           <h4>Meet The Team</h4>
           <h3>The Team That Makes it Happen</h3>
           <Image
-            src={HeroImage}
+            src={'/AuroraLogoBig.webp'}
             alt='about'
-            width={1100}
+            width={800}
             height={300}
             className='rounded-lg'
           />

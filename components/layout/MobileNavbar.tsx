@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { navLinks, contactInfo, socials } from '@/lib/data';
-import logo from '@/public/logo.png';
+import { navLinks, contactInfo /*, socials */ } from '@/lib/data';
+import logo from '@/public/AuroraLogo.webp';
 
 interface MobileMenuProps {
   customClass?: string;
@@ -28,20 +28,20 @@ export default function MobileNavBar({ customClass }: MobileMenuProps) {
 
   return (
     <nav
-      className={`${customClass} fixed top-0 left-0 right-0 bg-white text-gray-700 shadow-md z-50`}
+      className={`${customClass} fixed top-0 left-0 right-0 bg-white text-gray-700 shadow-md z-50 w-full`}
     >
       {/* Fixed Nav Bar - Always visible */}
-      <div className='container mx-auto px-4 py-5 z-30'>
-        <div className='flex justify-between items-center'>
+      <div className='w-full max-w-full mx-auto px-4 py-2 z-30'>
+        <div className='flex justify-between items-center w-full'>
           {/* Logo */}
-          <div>
+          <div className='flex-shrink-0'>
             <Link href={'/'}>
               <Image
                 src={logo}
-                alt='J&D Landscaping and Construction'
-                width={20}
+                alt='Aurora Lawn and Landscaping'
+                width={80}
                 height={20}
-                className='w-10'
+                className='w-20 h-auto'
               />
             </Link>
           </div>
@@ -49,7 +49,7 @@ export default function MobileNavBar({ customClass }: MobileMenuProps) {
           {/* Hamburger Icon or X icon */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className='text-gray-700 focus:outline-none relative'
+            className='text-gray-700 focus:outline-none relative flex-shrink-0'
             aria-expanded={isOpen}
             aria-label={isOpen ? 'Close menu' : 'Open Menu'}
           >
@@ -70,26 +70,26 @@ export default function MobileNavBar({ customClass }: MobileMenuProps) {
 
       {/* Mobile Menu Overlay - Full Screen with Animation */}
       <div
-        className={`fixed inset-0 bg-white transition-all duration-500 ease-in-out z-10 ${
+        className={`fixed inset-0 bg-white transition-all duration-500 ease-in-out z-10 overflow-hidden ${
           isOpen
             ? 'opacity-100 scale-y-100 origin-top'
             : 'opacity-0 scale-y-0 origin-top pointer-events-none'
         }`}
         style={{
-          top: '60px',
+          top: '70px',
           left: '0',
           right: '0',
           height: 'calc(100vh - 60px)',
         }}
       >
-        <div className='container mx-auto px-10 py-8 h-full flex flex-col'>
+        <div className='w-full max-w-full mx-auto px-4 py-8 h-full flex flex-col overflow-hidden'>
           {/* Navigation Links */}
-          <div className='flex flex-col gap-4'>
+          <div className='flex flex-col gap-4 w-full'>
             {navLinks.map((navLink) => (
               <Link
                 key={`${navLink.name} mobile`}
                 href={navLink.href}
-                className='block py-3 text-lg'
+                className='block py-3 text-lg w-full break-words'
                 onClick={() => setIsOpen(false)} // Close menu on link click
               >
                 {navLink.name}
@@ -97,9 +97,9 @@ export default function MobileNavBar({ customClass }: MobileMenuProps) {
             ))}
           </div>
 
-          <div className='flex gap-8'>
+          <div className='flex flex-wrap gap-4 sm:gap-8 w-full overflow-hidden'>
             {/* Social Icons */}
-            <div className='flex gap-7 mt-10'>
+            {/* <div className='flex flex-wrap gap-4 sm:gap-7 mt-10'>
               {socials.map((social) => (
                 <Link
                   key={social.name}
@@ -107,7 +107,7 @@ export default function MobileNavBar({ customClass }: MobileMenuProps) {
                   target='_blank'
                   rel='noopener noreferrer'
                   aria-label={social.name}
-                  className='text-gray-700'
+                  className='text-gray-700 flex-shrink-0'
                 >
                   <social.icon
                     className='w-5 h-5'
@@ -115,10 +115,10 @@ export default function MobileNavBar({ customClass }: MobileMenuProps) {
                   />
                 </Link>
               ))}
-            </div>
+            </div> */}
 
             {/* Contact Icons */}
-            <div className='flex gap-7 mt-10'>
+            <div className='flex flex-wrap gap-4 sm:gap-7 mt-10'>
               {contactInfo.map((contact) => (
                 <Link
                   key={contact.name}
@@ -126,7 +126,7 @@ export default function MobileNavBar({ customClass }: MobileMenuProps) {
                   target='_blank'
                   rel='noopener noreferrer'
                   aria-label={contact.name}
-                  className='text-gray-700'
+                  className='text-gray-700 flex-shrink-0'
                 >
                   <contact.icon
                     className='w-5 h-5'

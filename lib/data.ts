@@ -96,18 +96,18 @@ export const contactInfo = [
   },
 ];
 
-export const socials = [
-  {
-    name: 'Facebook',
-    url: 'https://www.facebook.com/',
-    icon: FaFacebookMessenger,
-  },
-  {
-    name: 'Instagram',
-    url: 'https://www.instagram.com/',
-    icon: RiInstagramFill,
-  },
-];
+// export const socials = [
+//   {
+//     name: 'Facebook',
+//     url: 'https://www.facebook.com/',
+//     icon: FaFacebookMessenger,
+//   },
+//   {
+//     name: 'Instagram',
+//     url: 'https://www.instagram.com/',
+//     icon: RiInstagramFill,
+//   },
+// ];
 
 export const reviewLinks = [
   {

@@ -22,7 +22,7 @@ interface ContactFormData {
 import { usePathname } from 'next/navigation';
 import { servicePlans, services } from '@/lib/data';
 import InputField from '../ui/InputField';
-import CustomFileUpload from '../ui/CustomFileUpload';
+// import CustomFileUpload from '../ui/CustomFileUpload';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -436,7 +436,7 @@ const ContactForm = () => {
         </div>
 
         {/* File Upload */}
-        <CustomFileUpload
+        {/* <CustomFileUpload
           onFileSelect={handleFileSelect}
           multiple={true}
           maxFiles={5}
@@ -444,7 +444,7 @@ const ContactForm = () => {
           required={false}
           name='files'
           id='files-input'
-        />
+        /> */}
 
         {/* Show selected files */}
         {formData.files && formData.files.length > 0 && (

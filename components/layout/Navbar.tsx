@@ -18,7 +18,7 @@ export default function Navbar({ customClass }: NavbarProps) {
             className='inline-flex flex-col items-center'
           >
             <Image
-              src='/logo.png'
+              src='/AuroraLogo.webp'
               alt='J&D Landscaping & Construction Logo'
               width={90}
               height={60}

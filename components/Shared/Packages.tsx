@@ -8,7 +8,7 @@ import { getCloudinaryImageData } from '@/lib/api/cloudinary';
 import Image from 'next/image';
 
 export default function Packages() {
-  const imageUrl = 'packages_hero';
+  const imageUrl = 'hero_main';
   const HeroImage = getCloudinaryImageData(imageUrl);
 
   return (
@@ -35,11 +35,13 @@ export default function Packages() {
                 key={servicePlans[0].id}
                 customClass='p-6 w-full group-hover:scale-[1.02] transition-transform duration-300 ease-in-out'
               >
-                <h6>{servicePlans[0].name}</h6>
+                <h6 className='text-accent font-black'>
+                  {servicePlans[0].name}
+                </h6>
                 <div className='bg-secondary p-5 m-3 text-white rounded  group'>
                   <div className='flex justify-center items-center'>
                     <h3 className='text-[2.5rem]'>${servicePlans[0].price}</h3>
-                    <h5 className='text-white'>/month</h5>
+                    <h5 className='text-primary font-bold'>/month</h5>
                   </div>
 
                   <ul>
@@ -71,13 +73,15 @@ export default function Packages() {
                   className='w-full lg:w-1/2 xl:w-auto xl:flex-1 group'
                 >
                   <Card customClass='p-4 md:p-6 h-auto min-h-[28rem] md:min-h-[32rem] group-hover:scale-[1.02] transition-transform duration-300 ease-in-out'>
-                    <h6 className='text-primary mb-4'>{service.name}</h6>
+                    <h6 className='text-accent font-black mb-4'>
+                      {service.name}
+                    </h6>
                     <div className='bg-primary min-h-[22rem] md:min-h-[26rem] text-white rounded p-6 md:p-10  m-2 md:m-3 flex flex-col'>
                       <div className='flex justify-center items-center mb-6 min-w-[11rem]'>
                         <h3 className='text-[2rem] md:text-[2.5rem]'>
                           ${service.price}
                         </h3>
-                        <h5>/month</h5>
+                        <h5 className='text-secondary font-bold'>/month</h5>
                       </div>
 
                       <ul className='flex-1 space-y-1'>
