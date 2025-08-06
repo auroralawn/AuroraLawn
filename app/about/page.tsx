@@ -3,7 +3,7 @@ import Values from '@/components/about/Values';
 import Container from '@/components/layout/Container';
 import HeroContainer from '@/components/layout/HeroContainer';
 import Section from '@/components/layout/Section';
-import { getCloudinaryImageData } from '@/lib/api/cloudinary';
+// import { getCloudinaryImageData } from '@/lib/api/cloudinary';
 import Image from 'next/image';
 import React from 'react';
 

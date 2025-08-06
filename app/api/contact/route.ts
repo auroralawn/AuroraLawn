@@ -31,21 +31,21 @@ export async function POST(request: Request) {
     const grassLengthValue = body.grassLength || '';
 
     // Process uploaded files if they exist
-    const uploadedFiles = body.files || [];
-    let fileUrls: string[] = [];
+    // const uploadedFiles = body.files || [];
+    // let fileUrls: string[] = [];
 
-    // If there are files, you might want to upload them to a file storage service
-    // and get URLs to store in HubSpot. For now, we'll just store file names.
-    if (uploadedFiles.length > 0) {
-      // TODO: Upload files to your preferred storage (AWS S3, Cloudinary, etc.)
-      // For now, we'll just store file information
-      fileUrls = uploadedFiles.map((file: any) => file.name || 'uploaded-file');
-    }
+    // // If there are files, you might want to upload them to a file storage service
+    // // and get URLs to store in HubSpot. For now, we'll just store file names.
+    // if (uploadedFiles.length > 0) {
+    //   // TODO: Upload files to your preferred storage (AWS S3, Cloudinary, etc.)
+    //   // For now, we'll just store file information
+    //   fileUrls = uploadedFiles.map((file: any) => file.name || 'uploaded-file');
+    // }
 
     // Create semicolon-separated strings
     const servicesValue = filteredServices.join(';');
     const subscriptionsValue = filteredSubscriptions.join(';');
-    const filesValue = fileUrls.join(';');
+    // const filesValue = fileUrls.join(';');
 
     const hubspotPayload = {
       fields: [
@@ -97,15 +97,15 @@ export async function POST(request: Request) {
           name: 'message',
           value: body.message || '',
         },
-        // Add uploaded files field if you have files
-        ...(filesValue
-          ? [
-              {
-                name: 'uploadimages', // Custom property in HubSpot
-                value: filesValue,
-              },
-            ]
-          : []),
+        // // Add uploaded files field if you have files
+        // ...(filesValue
+        //   ? [
+        //       {
+        //         name: 'uploadimages', // Custom property in HubSpot
+        //         value: filesValue,
+        //       },
+        //     ]
+        //   : []),
       ],
       context: {
         pageUri: body.pageUri || 'http://localhost:3000/contact',

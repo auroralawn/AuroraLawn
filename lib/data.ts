@@ -1,7 +1,7 @@
 import { FaHandsHelping } from 'react-icons/fa';
 import {
   FaFacebook,
-  FaFacebookMessenger,
+  // FaFacebookMessenger,
   FaGoogle,
   FaHouse,
   FaLightbulb,
@@ -11,7 +11,7 @@ import {
 import { IoIosSend } from 'react-icons/io';
 import { IoRibbon } from 'react-icons/io5';
 import { PiPlantFill } from 'react-icons/pi';
-import { RiInstagramFill } from 'react-icons/ri';
+// import { RiInstagramFill } from 'react-icons/ri';
 
 export const companyName = 'Aurora Lawn & Landscaping';
 
