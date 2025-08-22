@@ -17,6 +17,7 @@ interface ButtonProps {
 import { ReactNode } from 'react';
 import { HiOutlineCheckCircle } from 'react-icons/hi2';
 import { PiBroomBold } from 'react-icons/pi';
+import Link from 'next/link';
 
 const Card = ({ children, customClass = '' }: CardProps) => (
   <div
@@ -27,9 +28,11 @@ const Card = ({ children, customClass = '' }: CardProps) => (
 );
 
 const Button = ({ text, link }: ButtonProps) => (
-  <button className='w-full bg-gradient-to-r hover:from-secondary hover:to-accent from-secondary to-primary text-white font-semibold py-3 px-6 rounded-xl transition-all duration-600 transform hover:scale-105 shadow-md hover:shadow-lg'>
-    {text}
-  </button>
+  <Link href={link}>
+    <div className='w-full bg-gradient-to-r hover:from-secondary hover:to-accent from-secondary to-primary text-white font-semibold py-3 px-6 rounded-xl transition-all duration-600 transform hover:scale-105 shadow-md hover:shadow-lg text-center'>
+      {text}
+    </div>
+  </Link>
 );
 
 export default function Packages() {
