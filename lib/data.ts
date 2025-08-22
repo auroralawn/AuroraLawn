@@ -204,13 +204,7 @@ export const testimonials = [
 //   },
 // ];
 
-import {
-  HiOutlineCheckCircle,
-  HiSparkles,
-  HiStar,
-  HiLightningBolt,
-  HiTrash,
-} from 'react-icons/hi';
+import { HiSparkles, HiStar, HiLightningBolt } from 'react-icons/hi';
 
 import { PiBroomBold } from 'react-icons/pi';
 
