@@ -148,59 +148,145 @@ export const testimonials = [
   },
 ];
 
+// export const servicePlans = [
+//   {
+//     id: 'basic-plan',
+//     name: 'Basic Plan',
+//     perks: [
+//       'Lawn Mowing',
+//       'Lawn Blowing',
+//       'Push Mow + $35',
+//       'Trimmings + $10',
+//       'Edging + $10',
+//       'Bagging/Disposal + $5',
+//       'Per Extra Cut + $5',
+//     ],
+//     price: 25,
+//   },
+//   {
+//     id: 'advanced-plan',
+//     name: 'Advanced Plan',
+//     perks: [
+//       'Double Cut Lawn Mowing',
+//       'Lawn Blowing',
+//       'Push Mow',
+//       // 'Lawn Blowing would this be done if things are being bagged?',
+//       // 'Push Mow what is diffrence between lawn mow and push mow?',
+//       'Trimmings',
+//       'Edging',
+//       'Bagging/Disposal',
+//       'Per Extra Cut + $5',
+//     ],
+//     price: 55,
+//   },
+//   {
+//     id: 'premium-plan',
+//     name: 'Premium Plan',
+//     perks: [
+//       'Multiple Cut Lawn Mowing',
+//       'Lawn Blowing',
+//       'Push Mow + $35',
+//       // 'Lawn Blowing would this be done if things are being bagged?',
+//       // 'Push Mow what is diffrence between lawn mow and push mow?',
+//       'Trimmings',
+//       'Edging',
+//       'Bagging/Disposal',
+//       'Patterns',
+//       'Per Extra Cut + $5',
+//     ],
+//     price: 75,
+//   },
+//   {
+//     id: 'cleanup-plan',
+//     name: 'Cleanup Plan',
+//     perks: ['Bagging/Disposal'],
+//     price: 125,
+//   },
+// ];
+
+import {
+  HiOutlineCheckCircle,
+  HiSparkles,
+  HiStar,
+  HiLightningBolt,
+  HiTrash,
+} from 'react-icons/hi';
+
+import { PiBroomBold } from 'react-icons/pi';
+
 export const servicePlans = [
   {
     id: 'basic-plan',
-    name: 'Basic Plan',
-    perks: [
-      'Lawn Mowing',
-      'Lawn Blowing',
-      'Push Mow + $35',
-      'Trimmings + $10',
-      'Edging + $10',
-      'Bagging/Disposal + $5',
-      'Per Extra Cut + $5',
-    ],
+    name: 'Essential Care',
+    tagline: 'Get your lawn cut right',
     price: 25,
+    frequency: 'Weekly',
+    idealFor: 'Small to medium lawns, basic maintenance needs',
+    popular: true,
+    icon: HiStar,
+
+    perks: [
+      '✓ Professional mowing service',
+      '✓ Walkway cleanup included',
+      '• Push mowing for tight spots (+$35)',
+      '• Crisp edge trimming (+$10)',
+      '• Grass collection service (+$5)',
+    ],
   },
   {
     id: 'advanced-plan',
-    name: 'Advanced Plan',
-    perks: [
-      'Double Cut Lawn Mowing',
-      'Lawn Blowing',
-      'Push Mow',
-      // 'Lawn Blowing would this be done if things are being bagged?',
-      // 'Push Mow what is diffrence between lawn mow and push mow?',
-      'Trimmings',
-      'Edging',
-      'Bagging/Disposal',
-      'Per Extra Cut + $5',
-    ],
+    name: 'Complete Care',
+    tagline: 'Your neighbors will notice',
     price: 55,
+    frequency: 'Weekly',
+    idealFor: 'Medium to large lawns, professional appearance desired',
+    popular: false,
+    icon: HiSparkles,
+
+    perks: [
+      '✓ Premium double-cut mowing',
+      '✓ Complete cleanup service',
+      '✓ Push mowing included',
+      '✓ Precise edge trimming',
+      '✓ Grass collection & disposal',
+    ],
   },
   {
     id: 'premium-plan',
-    name: 'Premium Plan',
-    perks: [
-      'Multiple Cut Lawn Mowing',
-      'Lawn Blowing',
-      'Push Mow + $35',
-      // 'Lawn Blowing would this be done if things are being bagged?',
-      // 'Push Mow what is diffrence between lawn mow and push mow?',
-      'Trimmings',
-      'Edging',
-      'Bagging/Disposal',
-      'Patterns',
-      'Per Extra Cut + $5',
-    ],
+    name: 'Signature Care',
+    tagline: 'Magazine-worthy results',
     price: 75,
+    frequency: 'Weekly',
+    idealFor: 'Large properties, premium curb appeal, HOA requirements',
+    popular: false,
+    icon: HiLightningBolt,
+
+    perks: [
+      '✓ Multi-pass perfection mowing',
+      '✓ Premium cleanup service',
+      '✓ Detailed push mowing',
+      '✓ Precision edge trimming',
+      '✓ Full collection & disposal',
+      '✓ Custom mowing patterns',
+    ],
   },
   {
     id: 'cleanup-plan',
-    name: 'Cleanup Plan',
-    perks: ['Bagging/Disposal'],
+    name: 'Fresh Start',
+    tagline: 'Reset your outdoor space',
     price: 125,
+    frequency: 'One-time',
+    idealFor: 'Spring/fall cleanup, post-storm recovery, move-in preparation',
+    popular: false,
+    icon: PiBroomBold,
+
+    perks: [
+      '✓ Complete debris removal',
+      '✓ Overgrown area restoration',
+      '✓ Storm damage cleanup',
+      '✓ Event preparation service',
+      '✓ Bulk waste disposal',
+    ],
   },
 ];
 
