@@ -21,17 +21,17 @@ export default function Hero() {
       <div className='absolute inset-0 bg-black/60 z-10' />
 
       {/* Content Wrapper */}
-      <div className='relative z-20 flex items-center justify-center min-h-screen mt-20 '>
+      <div className='relative z-20 flex items-center justify-center min-h-screen mt-20 md:mt-36 xl:mt-0 '>
         <div className=' w-full max-w-7xl flex flex-col xl:flex-row items-center justify-between xl:gap-12 rounded-xl'>
           {/* Left Side: Text */}
           <div className='px-4 w-full md:w-2/3 space-y-1 text-center sm:text-start'>
-            <h1 className='text-4xl md:text-5xl text-white text-center xl:text-start'>
+            <h1 className='text-4xl md:text-5xl text-white text-center xl:text-start m-0'>
               Proudly Servicing
             </h1>
-            <h2 className=' text-5xl md:text-8xl md:leading-32 text-secondary text-center xl:text-start'>
+            <h2 className='text-5xl md:text-8xl md:leading-28 text-secondary text-center xl:text-start'>
               Minnesota’s Lawns
             </h2>
-            <h3 className='text-4xl md:text-5xl text-white text-center xl:text-start mt-2'>
+            <h3 className='text-4xl md:text-5xl text-white text-center xl:text-start mt-0'>
               Season After Season
             </h3>
             <p className='text-white text-center xl:text-start'>
@@ -43,7 +43,7 @@ export default function Hero() {
 
           {/* Right Side: Form */}
           <div className='md:w-1/2'>
-            <ContactForm />
+            <ContactForm customClass='mt-10 mb-2 lg:mt-24' />
           </div>
         </div>
       </div>

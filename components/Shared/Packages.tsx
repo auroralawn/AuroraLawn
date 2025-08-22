@@ -30,44 +30,9 @@ export default function Packages() {
           <h4 className='text-white'>Need Regular Maintenance?</h4>
           <h3>Subscription Services - Transparent Pricing</h3>
           <div className='my-container max-w-[75rem] flex flex-col gap-10 justify-center items-center '>
-            <div className='w-full group'>
-              <Card
-                key={servicePlans[0].id}
-                customClass='p-6 w-full group-hover:scale-[1.02] transition-transform duration-300 ease-in-out'
-              >
-                <h6 className='text-accent font-black'>
-                  {servicePlans[0].name}
-                </h6>
-                <div className='bg-secondary p-5 m-3 text-white rounded  group'>
-                  <div className='flex justify-center items-center'>
-                    <h3 className='text-[2.5rem]'>${servicePlans[0].price}</h3>
-                    <h5 className='text-primary font-bold'>/month</h5>
-                  </div>
-
-                  <ul>
-                    {servicePlans[0].perks.map((perk) => (
-                      <div
-                        key={perk}
-                        className='flex gap-2  items-center'
-                      >
-                        <HiOutlineCheckCircle className=' flex-shrink-0' />
-                        <li className='text-start py-2 leading-tight'>
-                          {perk}
-                        </li>
-                      </div>
-                    ))}
-                  </ul>
-                </div>
-                <Button
-                  text='Request Plan'
-                  link='\contact'
-                />
-              </Card>
-            </div>
-
             {/* Other Plans */}
             <div className='w-full lg:w-auto flex flex-col gap-6 lg:gap-10 lg:flex-row justify-center lg:justify-between'>
-              {servicePlans.slice(1).map((service) => (
+              {servicePlans.slice(0, 3).map((service) => (
                 <div
                   key={service.id}
                   className='w-full lg:w-1/2 xl:w-auto xl:flex-1 group'
@@ -81,7 +46,7 @@ export default function Packages() {
                         <h3 className='text-[2rem] md:text-[2.5rem]'>
                           ${service.price}
                         </h3>
-                        <h5 className='text-secondary font-bold'>/month</h5>
+                        <h5 className='text-secondary font-bold'>/Week</h5>
                       </div>
 
                       <ul className='flex-1 space-y-1'>
@@ -105,6 +70,41 @@ export default function Packages() {
                   </Card>
                 </div>
               ))}
+            </div>
+            {/* Clean Up Plan */}
+            <div className='w-full group'>
+              <Card
+                key={servicePlans[3].id}
+                customClass='p-6 w-full group-hover:scale-[1.02] transition-transform duration-300 ease-in-out'
+              >
+                <h6 className='text-accent font-black'>
+                  {servicePlans[3].name}
+                </h6>
+                <div className='bg-secondary p-5 m-3 text-white rounded  group'>
+                  <div className='flex justify-center items-center'>
+                    <h3 className='text-[2.5rem]'>${servicePlans[3].price}</h3>
+                    <h5 className='text-primary font-bold'>/Week</h5>
+                  </div>
+
+                  <ul>
+                    {servicePlans[3].perks.map((perk) => (
+                      <div
+                        key={perk}
+                        className='flex gap-2  items-center'
+                      >
+                        <HiOutlineCheckCircle className=' flex-shrink-0' />
+                        <li className='text-start py-2 leading-tight'>
+                          {perk}
+                        </li>
+                      </div>
+                    ))}
+                  </ul>
+                </div>
+                <Button
+                  text='Request Plan'
+                  link='\contact'
+                />
+              </Card>
             </div>
           </div>
         </Container>

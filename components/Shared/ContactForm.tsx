@@ -23,8 +23,11 @@ import { usePathname } from 'next/navigation';
 import { servicePlans, services } from '@/lib/data';
 import InputField from '../ui/InputField';
 // import CustomFileUpload from '../ui/CustomFileUpload';
+interface ContactFormProps {
+  customClass?: string;
+}
 
-const ContactForm = () => {
+const ContactForm = ({ customClass }: ContactFormProps) => {
   const [formData, setFormData] = useState<ContactFormData>({
     firstname: '',
     lastname: '',
@@ -203,12 +206,12 @@ const ContactForm = () => {
   };
 
   return (
-    <div className='mx-4 my-8 max-w-[35rem] md:mx-auto md:w-full'>
+    <div className={`${customClass} mx-4 max-w-[35rem] md:mx-auto md:w-full`}>
       <form
-        className='bg-white p-4 rounded-lg flex flex-col gap-3'
+        className='bg-white p-4 rounded-lg flex flex-col gap-[0.65rem]'
         onSubmit={handleSubmit}
       >
-        <h5 className='text-center text-gray-700'>Request a Quote</h5>
+        <h5 className='text-center text-gray-700 mb-3'>Request a Quote</h5>
         {submitStatus.type === 'success' && (
           <div className='p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg'>
             {submitStatus.message}
@@ -313,57 +316,53 @@ const ContactForm = () => {
         </div>
 
         {/* Grass Length Selection */}
-        <div className='mb-4'>
+        <div className='relative'>
           <label
             htmlFor='grass-length-input'
-            className='block text-sm font-medium text-gray-700 mb-2'
+            className='label'
           >
             Lawn Grass Length *
           </label>
-          <div className='relative'>
-            <select
-              name='grassLength'
-              id='grass-length-input'
-              value={formData.grassLength}
-              onChange={handleChange}
-              required
-              className='w-full p-3 pr-10 rounded-lg border border-gray-300 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all appearance-none bg-white text-gray-900'
+          <select
+            name='grassLength'
+            id='grass-length-input'
+            value={formData.grassLength}
+            onChange={handleChange}
+            required
+            className='w-full p-3 pr-10 rounded-lg border border-gray-300 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all appearance-none bg-white text-gray-900'
+          >
+            <option
+              value=''
+              disabled
+              className='text-gray-500'
             >
-              <option
-                value=''
-                disabled
-                className='text-gray-500'
-              >
-                Please select grass length
-              </option>
-              <option value='under_6_inches'>Less than 6 inches</option>
-              <option value='over_6_inches'>More than 6 inches</option>
-            </select>
-            <div className='absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none'>
-              <svg
-                className='w-4 h-4 text-gray-400'
-                fill='none'
-                stroke='currentColor'
-                viewBox='0 0 24 24'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M19 9l-7 7-7-7'
-                />
-              </svg>
-            </div>
+              Please select grass length
+            </option>
+            <option value='under_6_inches'>Less than 6 inches</option>
+            <option value='over_6_inches'>More than 6 inches</option>
+          </select>
+          <div className='absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none'>
+            <svg
+              className='w-4 h-4 text-gray-400'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M19 9l-7 7-7-7'
+              />
+            </svg>
           </div>
         </div>
 
         {/* Services */}
-        <div className='mb-4'>
-          <label className='block text-sm font-medium text-gray-700 mb-2'>
-            Services
-          </label>
+        <div className='relative'>
+          <label className='label'>Services *</label>
           <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-lg border border-gray-300 hover:border-gray-400 focus-within:ring-2 focus-within:ring-secondary focus-within:border-transparent'>
-            <div className='space-y-3'>
+            <div className='space-y-2'>
               <p className='text-secondary font-semibold text-sm'>
                 Project Services
               </p>
@@ -390,7 +389,7 @@ const ContactForm = () => {
                 </div>
               ))}
             </div>
-            <div className='space-y-3'>
+            <div className='space-y-2'>
               <p className='text-secondary font-semibold text-sm'>
                 Subscription Services
               </p>
@@ -424,10 +423,10 @@ const ContactForm = () => {
         </div>
 
         {/* Message */}
-        <div className='mb-4'>
+        <div className='relative'>
           <label
             htmlFor='message-input'
-            className='block text-sm font-medium text-gray-700 mb-2'
+            className='label'
           >
             Message *
           </label>
@@ -437,7 +436,7 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleChange}
             className='w-full p-3 rounded-lg border border-gray-300 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent resize-none transition-all'
-            rows={5}
+            rows={3}
             placeholder='Please provide details about your project...'
             required
           />
