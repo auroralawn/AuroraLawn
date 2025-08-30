@@ -137,24 +137,24 @@ export default function Packages() {
             {/* Clean-Up Plan - Full Width */}
             <div className='group relative  mx-auto'>
               <Card customClass='group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2 overflow-hidden'>
-                <div className='p-8 lg:p-12'>
+                <div className='p-8'>
                   {/* Header Section */}
-                  <div className='text-center mb-8'>
+                  <div className='text-center mb-4'>
                     <div className='inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl mb-6 text-orange-600 group-hover:scale-110 transition-transform duration-300'>
                       <PiBroomBold className='w-8 h-8' />
                     </div>
-                    <h3 className='text-3xl font-bold text-gray-900 mb-2'>
+                    <h3 className='text-3xl font-bold m-0 text-gray-900 mb-2'>
                       {servicePlans[3].name}
                     </h3>
-                    <p className='text-gray-600'>
+                    <p className='text-gray-600 text-center'>
                       One-time professional cleanup service
                     </p>
                   </div>
 
                   {/* Price Section */}
-                  <div className='text-center mb-10 p-8 bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl'>
+                  <div className='text-center mb-5 p-8 bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl'>
                     <div className='flex items-baseline justify-center gap-2'>
-                      <span className='text-6xl font-bold text-gray-900'>
+                      <span className='text-5xl font-bold text-gray-900'>
                         ${servicePlans[3].price}
                       </span>
                       <span className='text-2xl font-semibold text-gray-500'>
@@ -164,8 +164,8 @@ export default function Packages() {
                   </div>
 
                   {/* Features Section */}
-                  <div className='mb-10'>
-                    <ul className='grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto'>
+                  <div className='mb-5'>
+                    <ul className='grid grid-cols-1 md:grid-cols-2 gap-3 max-w-3xl mx-auto'>
                       {servicePlans[3].perks.map((perk, index) => (
                         <li
                           key={index}

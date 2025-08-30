@@ -12,9 +12,9 @@ export default function page() {
         subheading='Explore What We Have to Offer'
         caption='We deliver exceptional results that exceed expectations every time. Honest pricing, reliable service, and promises we always keep. Your satisfaction is our priority from start to finish.'
       />
-      <JobTypes />
       <Packages />
       <OurServices />
+      <JobTypes />
       <CallToAction />
     </div>
   );
